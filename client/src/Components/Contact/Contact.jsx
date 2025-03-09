@@ -8,16 +8,69 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Contact() {
+  const token = import.meta.env.VITE_SECRET_TOKEN;
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit = async(data,event) => {
+    event.preventDefault();
+
+    const loadingToast = toast.loading("Please wait... 🚑", {
+      style: {
+        background: "#000",
+        color: "#fff",
+        fontWeight: "bold",
+        padding: "12px", 
+        borderRadius: "8px", 
+      },
+    });
+
+    try {
+      const response = await axios.post(
+        `http://localhost:3000/api/contact/submit`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+
+      toast.success(response.data.message || "Successful!", {
+        id: loadingToast,
+        style: {
+          background: "#000",
+          color: "#fff",
+          fontWeight: "bold",
+          padding: "12px",
+          borderRadius: "8px",
+        },
+      });
+
+
+      reset();
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Something went wrong!", {
+        id: loadingToast,
+        style: {
+          background: "#000", 
+          color: "#fff", 
+          fontWeight: "bold",
+          padding: "12px", 
+          borderRadius: "8px",
+        },
+      });
+    }
   };
 
   return (
@@ -37,7 +90,7 @@ function Contact() {
             <div className="flex flex-col space-y-3 w-1/2">
               <label className="font-bold">Name*</label>
               <input
-                {...register("name", { required: "Name is required" })}
+                {...register("userName", { required: "Name is required" })}
                 className="outline-none border-b-2 text-[20px] p-2"
                 placeholder="Name"
                 type="text"
@@ -50,7 +103,7 @@ function Contact() {
             <div className="flex flex-col space-y-3 w-1/2">
               <label className="font-bold">Phone*</label>
               <input
-                {...register("phone", {
+                {...register("userPhone", {
                   required: "Phone number is required",
                   pattern: {
                     value: /^[0-9]{10}$/,
@@ -69,7 +122,7 @@ function Contact() {
           <div className="flex flex-col space-y-3">
             <label className="font-bold">Email*</label>
             <input
-              {...register("email", {
+              {...register("userEmail", {
                 required: "Email is required",
                 pattern: {
                   value: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
@@ -88,7 +141,7 @@ function Contact() {
           <div className="flex flex-col space-y-3">
             <label className="font-bold">Message*</label>
             <input
-              {...register("message", { required: "Message is required" })}
+              {...register("userMessage", { required: "Message is required" })}
               className="outline-none border-b-2 text-[20px] p-2"
               placeholder="Message"
               rows="3"
@@ -98,7 +151,6 @@ function Contact() {
             )}
           </div>
 
-          {/* Submit Button */}
           <div className="flex justify-end">
             <Button text="Submit" />
           </div>
