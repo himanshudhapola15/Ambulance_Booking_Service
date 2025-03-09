@@ -20,7 +20,7 @@ function Contact() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async(data,event) => {
+  const onSubmit = async (data, event) => {
     event.preventDefault();
 
     const loadingToast = toast.loading("Please wait... 🚑", {
@@ -28,8 +28,8 @@ function Contact() {
         background: "#000",
         color: "#fff",
         fontWeight: "bold",
-        padding: "12px", 
-        borderRadius: "8px", 
+        padding: "12px",
+        borderRadius: "8px",
       },
     });
 
@@ -57,16 +57,15 @@ function Contact() {
         },
       });
 
-
       reset();
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong!", {
         id: loadingToast,
         style: {
-          background: "#000", 
-          color: "#fff", 
+          background: "#000",
+          color: "#fff",
           fontWeight: "bold",
-          padding: "12px", 
+          padding: "12px",
           borderRadius: "8px",
         },
       });
@@ -76,8 +75,8 @@ function Contact() {
   return (
     <div className="mx-20 font-roboto space-y-10 mb-20">
       <div className="space-y-2">
-        <h1 className=" text-7xl font-bold text-black">Get in touch</h1>
-        <p className=" text-gray">
+        <h1 className="text-7xl font-bold text-black">Get in touch</h1>
+        <p className="text-gray">
           Feel free to reach out to our friendly team!
         </p>
       </div>
@@ -95,8 +94,10 @@ function Contact() {
                 placeholder="Name"
                 type="text"
               />
-              {errors.name && (
-                <p className="text-red-500 text-sm">{errors.name.message}</p>
+              {errors.userName && (
+                <p className="text-red text-sm">
+                  {errors.userName.message}
+                </p>
               )}
             </div>
 
@@ -114,11 +115,14 @@ function Contact() {
                 placeholder="Phone"
                 type="text"
               />
-              {errors.phone && (
-                <p className="text-red-500 text-sm">{errors.phone.message}</p>
+              {errors.userPhone && (
+                <p className="text-red text-sm">
+                  {errors.userPhone.message}
+                </p>
               )}
             </div>
           </div>
+
           <div className="flex flex-col space-y-3">
             <label className="font-bold">Email*</label>
             <input
@@ -131,10 +135,10 @@ function Contact() {
               })}
               className="outline-none border-b-2 text-[20px] p-2"
               placeholder="Email"
-              type="text"
+              type="email"
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            {errors.userEmail && (
+              <p className="text-red text-sm">{errors.userEmail.message}</p>
             )}
           </div>
 
@@ -146,8 +150,10 @@ function Contact() {
               placeholder="Message"
               rows="3"
             />
-            {errors.message && (
-              <p className="text-red-500 text-sm">{errors.message.message}</p>
+            {errors.userMessage && (
+              <p className="text-red text-sm">
+                {errors.userMessage.message}
+              </p>
             )}
           </div>
 
@@ -155,6 +161,8 @@ function Contact() {
             <Button text="Submit" />
           </div>
         </form>
+
+
         <div className="space-y-8 flex flex-col justify-center">
           <div className="flex gap-3 items-center">
             <div className="w-11 h-11 bg-red text-2xl flex justify-center items-center rounded-2xl">

@@ -6,6 +6,7 @@ import { Panel } from "../Components/Services/Panel";
 import { Testimonial } from "../Components/Testimonials/Testimonial";
 import { Footer } from "../Components/Footer/Footer";
 import { IoCall } from "react-icons/io5";
+import { Grid } from "../Components/Grid/Grid";
 
 function HomePage() {
   return (
@@ -18,6 +19,7 @@ function HomePage() {
         <HeroSection />
         <HeroSectionSecondary />
         <Panel />
+        <Grid />
         <Testimonial />
         <Footer />
       </div>

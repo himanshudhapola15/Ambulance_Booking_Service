@@ -19,8 +19,8 @@ function Testimonial() {
   };
 
   const isPrevDisabled = activeIndex === 0;
-  const isNextDisabled = activeIndex >= totalItems - 3; // Disable on second-last card
-  const showRedBackground = activeIndex <= totalItems - 3; // Red stays until second-last card
+  const isNextDisabled = activeIndex >= totalItems - 3;
+  const showRedBackground = activeIndex <= totalItems - 3;
 
   const items = testimonialData.map((item, index) => {
     const isCenter = activeIndex + 1 === index;

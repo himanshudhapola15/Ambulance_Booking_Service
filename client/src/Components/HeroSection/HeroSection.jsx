@@ -12,7 +12,6 @@ function HeroSection() {
       </div>
       <div className=" mx-[50px] relative z-0">
         <Carousel />
-        
       </div>
       <div className="my-16">
         <ScrollingText />

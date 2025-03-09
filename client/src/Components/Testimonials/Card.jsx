@@ -19,7 +19,6 @@ function Card({ item, isCenter }) {
       </div>
       <p className="w-[333px]">{item.para}</p>
 
-      {/* Star Rating */}
       <div className="flex space-x-1 justify-end">
         {Array.from({ length: 5 }).map((_, index) => (
           <span

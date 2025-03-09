@@ -36,9 +36,9 @@ function Info() {
         </p>
       </div>
 
-      <div className="flex items-center">
-        <div className="flex justify-center items-center">
-          <MdKeyboardArrowRight className="w-56 h-56 text-red font-extrabold drop-shadow-3xl" />
+      <div className="flex items-center gap-15">
+        <div className="flex ml-10 justify-center items-center">
+          <img src="../../../public/assets/Frame 10.png" alt="arrow" className="w-30"/>
         </div>
         <p className="font-bold text-[80px] leading-20">
           <span className="block">FROM</span>
