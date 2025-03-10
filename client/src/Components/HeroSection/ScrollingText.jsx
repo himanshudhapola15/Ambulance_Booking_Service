@@ -5,7 +5,7 @@ function ScrollingText() {
   return (
     <div className="w-full h-full overflow-hidden">
       <Marquee
-        className="font-roboto text-darkgray text-5xl whitespace-nowrap overflow-hidden"
+        className="font-roboto text-darkgray text-lg md:text-3xl lg:text-5xl whitespace-nowrap overflow-hidden"
         speed={50}
         gradient={false} 
       >

@@ -55,26 +55,31 @@ function Details() {
   };
 
   return (
-    <div className="font-roboto text-white space-y-8">
-      <section className="w-[650px] text-7xl">
+    <div className="font-roboto text-white space-y-1 md:space-y-5">
+      <section className="lg:w-[650px] leading-5 md:leading-8 lg:leading-16 w-[200px] md:w-[350px] text-lg md:text-3xl lg:text-7xl">
         Instant Ambulance Service
       </section>
-      <section className="h-[16px]">Fast, Simple & Reliable</section>
+      <section className="text-xs md:text-lg">Fast, Simple & Reliable</section>
 
-      <section className="flex flex-col justify-center items-center backdrop-blur-md w-[540px] rounded-4xl">
-        <form onSubmit={handleSubmit(onSubmit)} className="p-16 space-y-12">
-          <div className="flex flex-col space-y-2">
+      <section className="flex flex-col justify-center items-center backdrop-blur-md w-[180px] md:w-[350px] lg:w-[540px] rounded-2xl md:rounded-4xl">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="p-2 md:p-4 lg:p-16 space-y-1 lg:space-y-12"
+        >
+          <div className="flex flex-col md:space-y-1">
             <input
               {...register("userName", { required: "Name is required" })}
-              className="w-[392px] outline-none border-b-2 text-[20px] p-2"
+              className="lg:w-[392px] w-[150px] md:w-[250px] outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[20px] p-1 md:p-2"
               placeholder="Name*"
               type="text"
             />
             {errors.userName && (
-              <p className="text-red text-sm">{errors.userName.message}</p>
+              <p className="text-red text-[5px] md:text-sm">
+                {errors.userName.message}
+              </p>
             )}
           </div>
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col md:space-y-1">
             <input
               {...register("userPhone", {
                 required: "Phone number is required",
@@ -83,16 +88,18 @@ function Details() {
                   message: "Phone number must be 10 digits",
                 },
               })}
-              className="w-[392px] outline-none border-b-2 text-[20px] p-2"
+              className="lg:w-[392px] w-[150px] md:w-[250px] outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[20px] p-1 md:p-2"
               placeholder="Phone*"
               type="tel"
             />
             {errors.userPhone && (
-              <p className="text-red text-sm">{errors.userPhone.message}</p>
+              <p className="text-red text-[5px] md:text-sm">
+                {errors.userPhone.message}
+              </p>
             )}
           </div>
 
-          <div className="flex justify-end w-[392px] pb-8">
+          <div className="flex justify-end md:w-[250px] lg:w-[392px] pt-2 lg:pb-8">
             <Button
               text="Book Now"
               className="px-6 py-2 bg-red text-white rounded-lg"

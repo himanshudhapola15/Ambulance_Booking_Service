@@ -4,7 +4,7 @@ import { Card } from "./Card";
 
 function Cards() {
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
       {cardData.map((item) => (
         <Card item={item} key={item.key} />
       ))}

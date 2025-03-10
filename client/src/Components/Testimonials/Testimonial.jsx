@@ -1,72 +1,84 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { testimonialData } from "./TestimonialData";
 import { Card } from "./Card";
 
-const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
-  1024: { items: 3 },
-};
-
 function Testimonial() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1024);
   const totalItems = testimonialData.length;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1024);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleSlideChanged = ({ item }) => {
     setActiveIndex(item);
   };
 
   const isPrevDisabled = activeIndex === 0;
-  const isNextDisabled = activeIndex >= totalItems - 3;
-  const showRedBackground = activeIndex <= totalItems - 3;
+  const isNextDisabled = activeIndex >= totalItems - (isSmallScreen ? 1 : 3);
 
-  const items = testimonialData.map((item, index) => {
-    const isCenter = activeIndex + 1 === index;
-
-    return <Card key={item.key} item={item} isCenter={isCenter} />;
-  });
+  const items = testimonialData.map((item, index) => (
+    <Card
+      key={item.key}
+      item={item}
+      index={index}
+      activeIndex={activeIndex}
+      isSmallScreen={isSmallScreen}
+    />
+  ));
 
   return (
-    <div className="my-20 flex flex-col justify-center items-center space-y-16 mx-[67px]">
-      <h1 className="text-6xl font-roboto text-darkgray font-bold">
+    <div className="my-20 mb-50 flex flex-col justify-center items-center md:space-y-4 lg:space-y-16 mx-2 md:mx-[20px] lg:mx-[67px]">
+      <h1 className="text-xl md:text-4xl lg:text-6xl font-roboto text-darkgray font-bold">
         Trusted by Our Community
       </h1>
-      <AliceCarousel
-        mouseTracking
-        items={items}
-        responsive={responsive}
-        controlsStrategy="alternate"
-        onSlideChanged={handleSlideChanged}
-        disableDotsControls
-        renderPrevButton={() => (
-          <button
-            className={`cursor-pointer absolute left-[-50px] top-1/2 transform -translate-y-1/2 text-5xl ${
-              isPrevDisabled
-                ? "text-lightgray cursor-not-allowed"
-                : "text-black"
-            }`}
-            disabled={isPrevDisabled}
-          >
-            ❮
-          </button>
-        )}
-        renderNextButton={() => (
-          <button
-            className={`cursor-pointer absolute right-[-50px] top-1/2 transform -translate-y-1/2 text-5xl px-4 py-2 rounded-lg ${
-              isNextDisabled
-                ? "text-lightgray cursor-not-allowed"
-                : showRedBackground
-                ? " text-black"
-                : "text-black"
-            }`}
-            disabled={isNextDisabled}
-          >
-            ❯
-          </button>
-        )}
-      />
+      <div className="w-full mt-5 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]">
+        <AliceCarousel
+          mouseTracking
+          items={items}
+          paddingLeft={isSmallScreen ? 50 : 50}
+          paddingRight={isSmallScreen ? 50 : 50}
+          responsive={{
+            0: { items: 1 },
+            640: { items: 2 },
+            1024: { items: 3 },
+          }}
+          controlsStrategy="alternate"
+          onSlideChanged={handleSlideChanged}
+          disableDotsControls
+          renderPrevButton={() => (
+            <button
+              className={` cursor-pointer absolute top-1/2 transform -translate-y-1/2 left-2 sm:left-[-30px] lg:left-[-20px] md:left-[-1px] text-2xl md:text-4xl lg:text-5xl ${
+                isPrevDisabled
+                  ? "text-lightgray cursor-not-allowed"
+                  : "text-black"
+              }`}
+              disabled={isPrevDisabled}
+            >
+              ❮
+            </button>
+          )}
+          renderNextButton={() => (
+            <button
+              className={`cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-2 sm:right-[-30px] lg:right-[-20px] md:right-[-1px] text-2xl md:text-4xl lg:text-5xl ${
+                isNextDisabled
+                  ? "text-lightgray cursor-not-allowed"
+                  : "text-black"
+              }`}
+              disabled={isNextDisabled}
+            >
+              ❯
+            </button>
+          )}
+        />
+      </div>
     </div>
   );
 }

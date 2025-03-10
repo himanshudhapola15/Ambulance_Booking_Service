@@ -1,65 +1,73 @@
 import React from "react";
-import { Logo } from "../Navbar/Logo";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaWhatsapp } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className=" font-roboto">
-      <div className="h-[1px] bg-gray mb-10 "></div>
-      <div className="flex flex-col justify-center items-center space-y-14">
-        <div className="grid grid-cols-4">
-          <div className="text-black  pl-24 space-y-6">
-            <div className="w-[217px] h-[51px] bg-lightgray mt-[23px]"></div>
-            <p className="cursor-pointer  hover:underline text-left">
+    <footer className="font-roboto bg-lightgray pb-10">
+      <div className="h-[1px] bg-gray mb-10 mx-auto w-11/12 md:w-full"></div>
+      <div className="flex flex-col items-center space-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-10 w-11/12 md:ml-24 md:w-full text-center md:text-left">
+       
+          <div className="space-y-4">
+            <div className="w-[180px] h-[50px] bg-gray mx-auto md:mx-0"></div>
+            <p className="text-sm md:text-base text-gray-700">
               24/7 ambulance booking for fast, reliable emergency and
-              non-emergency transport
+              non-emergency transport.
             </p>
           </div>
-          <div className="pl-28 space-y-4">
-            <h1 className="cursor-pointer font-semibold  hover:underline">
-              Contact
-            </h1>
-            <p className="cursor-pointer hover:underline w-[230px]">
+
+  
+          <div className="space-y-3">
+            <h1 className="font-semibold text-lg">Contact</h1>
+            <p className="text-sm hover:underline cursor-pointer">
               1234 Maple Grove Lane, Rivertown, XY 78901
             </p>
-            <p className="cursor-pointer  hover:underline">
-              Call:- +91-90985 xxxxx
+            <p className="text-sm hover:underline cursor-pointer">
+              Call: +91-90985 xxxxx
             </p>
-            <p className="cursor-pointer  hover:underline">
-              Email:- sandhutravels@gmail.com
+            <p className="text-sm hover:underline cursor-pointer">
+              Email: sandhutravels@gmail.com
             </p>
-            <div className="flex gap-5">
-              <FaFacebook className="text-4xl cursor-pointer" />
-              <AiFillInstagram className="text-4xl cursor-pointer" />
-              <FaXTwitter className="text-4xl cursor-pointer" />
-              <FaWhatsapp className="text-4xl cursor-pointer" />
+     
+            <div className="flex justify-center md:justify-start gap-5 text-2xl mt-3">
+              <FaFacebook className="cursor-pointer hover:text-blue-600" />
+              <AiFillInstagram className="cursor-pointer hover:text-pink-500" />
+              <FaXTwitter className="cursor-pointer hover:text-black" />
+              <FaWhatsapp className="cursor-pointer hover:text-green-500" />
             </div>
           </div>
-          <div className="pl-28 space-y-2">
-            <h1 className=" font-semibold cursor-pointer hover:underline">
-              Quick Links
-            </h1>
-            <p className="cursor-pointer hover:underline ">Home</p>
-            <p className="cursor-pointer hover:underline">About Us</p>
-            <p className="cursor-pointer hover:underline">Book Ambulance</p>
-            <p className="cursor-pointer hover:underline">Our Services</p>
-            <p className="cursor-pointer hover:underline">Our Testimonials</p>
+
+        
+          <div className="space-y-2">
+            <h1 className="font-semibold text-lg">Quick Links</h1>
+            {[
+              "Home",
+              "About Us",
+              "Book Ambulance",
+              "Our Services",
+              "Our Testimonials",
+            ].map((link) => (
+              <p key={link} className="cursor-pointer hover:underline text-sm">
+                {link}
+              </p>
+            ))}
           </div>
-          <div className="pl-28 space-y-2">
-            <h1 className="cursor-pointer font-semibold hover:underline">
-              Others
-            </h1>
-            <p className="cursor-pointer hover:underline">Privacy Policy</p>
-            <p className="cursor-pointer hover:underline">
-              Terms and Condition
+
+          <div className="space-y-2">
+            <h1 className="font-semibold text-lg">Others</h1>
+            <p className="cursor-pointer hover:underline text-sm">
+              Privacy Policy
+            </p>
+            <p className="cursor-pointer hover:underline text-sm">
+              Terms and Conditions
             </p>
           </div>
         </div>
-        <div className="mb-10 text-gray">
-          ©2025 by Sandhu Travels. All rights reserved
+
+
+        <div className="text-sm text-gray-600 text-center">
+          ©2025 by Sandhu Travels. All rights reserved.
         </div>
       </div>
     </footer>
