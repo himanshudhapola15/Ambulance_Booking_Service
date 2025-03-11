@@ -3,28 +3,37 @@ import { equipmentData } from "./EquipmentData";
 
 function Card({ item }) {
   return (
-    <div className="group bg-lightgray cursor-pointer rounded-4xl h-[500px] w-[310px] md:h-[700px] md:w-[384px] transition-all duration-300 ease-in-out hover:bg-red">
-      <img src={item.image} alt="" className="rounded-t-4xl md:h-[256px]" />
-      <div className="font-roboto ml-8 text-black group-hover:text-white">
-        <h1 className="text-[20px] md:text-[30px] mt-8"> {item.heading} </h1>
-        <p className="text-sm md:text-lg h-36 md:w-[320px] mt-4">{item.para}</p>
-        <p className="uppercase text-gray -mt-7 md:mt-10 text-xs md:text-lg group-hover:text-lightgray font-semibold">
-          Equipment
-        </p>
-        <div className="flex -ml-6 mt-5 justify-evenly pb-4">
-          {equipmentData.map((item) => (
-            <div className="flex flex-col justify-center items-center">
-              <div className="bg-white rounded-full">
-                <img
-                  src={item.image}
-                  alt=""
-                  key={item.key}
-                  className="h-8 w-8 md:w-12 md:h-12 bg-offwhite rounded-full"
-                />
+    <div className="group bg-lightgray cursor-pointer lg:h-[700px] rounded-4xl  lg:w-1/3 transition-all duration-300 ease-in-out hover:bg-red flex flex-col">
+      <img src={item.image} alt="" className="rounded-t-4xl" />
+      <div className="flex group-hover:text-white flex-col flex-grow justify-between px-6 pb-4">
+        <div className="mt-6 space-y-2">
+          <h1 className="text-[20px] md:text-[30px]">{item.heading}</h1>
+          <p className="text-sm md:text-lg leading-4 md:leading-5.5">{item.para}</p>
+        </div>
+
+        <div className="font-roboto text-black group-hover:text-white mt-6">
+          <p className="uppercase text-gray text-xs md:text-base group-hover:text-lightgray font-semibold">
+            Equipment
+          </p>
+          <div className="flex mt-5 justify-evenly pb-4">
+            {equipmentData.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col justify-center items-center"
+              >
+                <div className="bg-white rounded-full">
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="h-7 w-7 md:w-9 md:h-9 bg-offwhite rounded-full"
+                  />
+                </div>
+                <p className="text-center text-[9px] md:text-[12px] font-roboto">
+                  {item.para}
+                </p>
               </div>
-              <p className="text-center text-[10px] md:text-[14px] font-roboto">{item.para}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

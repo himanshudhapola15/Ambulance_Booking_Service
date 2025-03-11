@@ -5,9 +5,9 @@ import { Cards } from "./Cards";
 
 function HeroSectionSecondary() {
   return (
-    <div className="mx-[30px] md:mx-12">
+    <div className="mx-[30px] md:mt-28 lg:mt-40 md:mx-15">
       <Heading />
-      <div className="w-full flex lg:flex-row flex-col md:justify-between items-center mt-7 md:mt-15 lg:mt-20">
+      <div className="w-full flex md:space-y-11 lg:flex-row flex-col md:justify-between items-center mt-7 md:mt-15 lg:mt-20">
         <div className="lg:w-1/2">
           <QualityMetric />
         </div>
