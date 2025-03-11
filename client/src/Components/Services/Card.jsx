@@ -25,7 +25,7 @@ function Card({ item }) {
                   <img
                     src={item.image}
                     alt=""
-                    className="h-7 w-7 md:w-9 md:h-9 bg-offwhite rounded-full"
+                    className="w-9 h-9 bg-offwhite rounded-full"
                   />
                 </div>
                 <p className="text-center text-[9px] md:text-[12px] font-roboto">

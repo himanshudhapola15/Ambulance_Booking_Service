@@ -6,12 +6,12 @@ import { Card } from "./Card";
 
 function Testimonial() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1024);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1250);
   const totalItems = testimonialData.length;
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 1024);
+      setIsSmallScreen(window.innerWidth < 1250);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -35,11 +35,11 @@ function Testimonial() {
   ));
 
   return (
-    <div className="my-20 mb-50 flex flex-col justify-center items-center md:space-y-4 lg:space-y-16 mx-2 md:mx-[20px] lg:mx-[67px]">
-      <h1 className="text-xl md:text-4xl lg:text-6xl font-roboto text-darkgray font-bold">
+    <div className="my-40 flex flex-col mb-10 justify-center items-center md:space-y-4 lg:space-y-16 mx-2 md:mx-[20px] lg:mx-[67px]">
+      <h1 className="text-4xl text-center lg:text-6xl font-roboto text-darkgray font-bold">
         Trusted by Our Community
       </h1>
-      <div className="w-full mt-5 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]">
+      <div className="w-full mt-5 ">
         <AliceCarousel
           mouseTracking
           items={items}
@@ -47,8 +47,9 @@ function Testimonial() {
           paddingRight={isSmallScreen ? 50 : 50}
           responsive={{
             0: { items: 1 },
-            640: { items: 2 },
-            1024: { items: 3 },
+            768: { items: 1.2},
+            1024: { items: 2},
+            1250: { items: 3 },
           }}
           controlsStrategy="alternate"
           onSlideChanged={handleSlideChanged}

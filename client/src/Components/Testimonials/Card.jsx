@@ -7,7 +7,7 @@ function Card({ item, isCenter, index, activeIndex, isSmallScreen }) {
 
   return (
     <div
-      className={`relative space-y-10 cursor-pointer rounded-2xl md:rounded-4xl md:p-10 p-5 md:space-y-20 transition-transform
+      className={`relative cursor-pointer rounded-2xl md:rounded-4xl md:p-10 p-5 md:space-y-20 transition-transform
         ${
           isActiveCard
             ? "bg-red text-offwhite scale-100 shadow-lg" 
