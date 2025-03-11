@@ -55,21 +55,21 @@ function Details() {
   };
 
   return (
-    <div className="font-roboto text-white space-y-1 md:space-y-5">
-      <section className="lg:w-[650px] leading-5 md:leading-8 lg:leading-16 w-[200px] md:w-[350px] text-lg md:text-3xl lg:text-7xl">
+    <div className="font-roboto h-[200px] sm:h-[250px] md:h-[450px] lg:h-[768px] justify-center flex flex-col text-white space-y-1 md:space-y-5">
+      <section className="w-1/3 lg:w-1/2 leading-5 md:leading-8 lg:leading-20 text-sm md:text-3xl lg:text-7xl">
         Instant Ambulance Service
       </section>
-      <section className="text-xs md:text-lg">Fast, Simple & Reliable</section>
+      <section className="text-[7px] md:text-base">Fast, Simple & Reliable</section>
 
-      <section className="flex flex-col justify-center items-center backdrop-blur-md w-[180px] md:w-[350px] lg:w-[540px] rounded-2xl md:rounded-4xl">
+      <section className="flex flex-col justify-center backdrop-blur-md w-1/3 rounded-2xl md:rounded-4xl">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-2 md:p-4 lg:p-16 space-y-1 lg:space-y-12"
+          className="p-2 md:p-6 lg:p-12 space-y-2 md:space-y-5 lg:space-y-8"
         >
           <div className="flex flex-col md:space-y-1">
             <input
               {...register("userName", { required: "Name is required" })}
-              className="lg:w-[392px] w-[150px] md:w-[250px] outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[20px] p-1 md:p-2"
+              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[20px] p-1"
               placeholder="Name*"
               type="text"
             />
@@ -88,7 +88,7 @@ function Details() {
                   message: "Phone number must be 10 digits",
                 },
               })}
-              className="lg:w-[392px] w-[150px] md:w-[250px] outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[20px] p-1 md:p-2"
+              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[20px] p-1 md:p-2"
               placeholder="Phone*"
               type="tel"
             />
@@ -99,7 +99,7 @@ function Details() {
             )}
           </div>
 
-          <div className="flex justify-end md:w-[250px] lg:w-[392px] pt-2 lg:pb-8">
+          <div className="flex justify-end ">
             <Button
               text="Book Now"
               className="px-6 py-2 bg-red text-white rounded-lg"

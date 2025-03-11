@@ -4,10 +4,11 @@ import Marquee from "react-fast-marquee";
 function ScrollingText() {
   return (
     <div className="w-full h-full overflow-hidden">
+      <div className="h-[1px] w-full bg-gray"></div>
       <Marquee
-        className="font-roboto text-darkgray text-lg md:text-3xl lg:text-5xl whitespace-nowrap overflow-hidden"
+        className="font-roboto my-1 text-darkgray text-lg md:text-3xl lg:text-5xl whitespace-nowrap overflow-hidden"
         speed={50}
-        gradient={false} 
+        gradient={false}
       >
         WHEN EVERY SECOND COUNTS, WE’RE HERE TO GET YOU THE CARE YOU NEED / IN
         EMERGENCIES, SPEED MATTERS. WE’RE HERE TO DELIVER CARE WHEN YOU NEED IT
@@ -16,6 +17,7 @@ function ScrollingText() {
         ON THE WAY / QUICK RESPONSE, COMPASSIONATE CARE—HELP IS JUST A CLICK
         AWAY /
       </Marquee>
+      <div className="h-[1px] w-full bg-gray"></div>
     </div>
   );
 }
