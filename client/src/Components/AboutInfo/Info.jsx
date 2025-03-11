@@ -2,10 +2,12 @@ import React from "react";
 
 function Info() {
   return (
-    <div className="font-roboto mx-20 mt-20 mb-20 text-black grid grid-cols-2 gap-16">
-      <div className="space-y-10">
-        <h1 className="text-7xl font-bold">What drives us?</h1>
-        <p className="text-2xl">
+    <div className="font-roboto mx-7 md:mx-10 mt-20 mb-20 text-black grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="md:space-y-10 space-y-3">
+        <h1 className="font-extrabold text-3xl md:text-5xl lg:text-7xl">
+          What drives us?
+        </h1>
+        <p className="md:text-2xl leading-5 md:leading-7 lg:leading-9">
           Our mission at Sandhu Travels is to provide fast, reliable, and
           accessible ambulance services to those in need, ensuring timely
           medical assistance in emergencies. We are dedicated to bridging the
@@ -19,9 +21,11 @@ function Info() {
         </p>
       </div>
 
-      <div className="space-y-10">
-        <h1 className="text-7xl font-bold">Why we serve?</h1>
-        <p className="text-2xl">
+      <div className="md:space-y-10 space-y-3">
+        <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold">
+          Why we serve?
+        </h1>
+        <p className="md:text-2xl leading-5 md:leading-7 lg:leading-9">
           At Sandhu Travels, our vision is to revolutionize emergency medical
           transportation by providing seamless, efficient, and reliable
           ambulance booking services. We aim to create a world where individuals
@@ -35,20 +39,24 @@ function Info() {
         </p>
       </div>
 
-      <div className="flex items-center gap-15">
-        <div className="flex ml-10 justify-center items-center">
-          <img src="/assets/Frame 10.png" alt="arrow" className="w-30"/>
+      <div className="flex justify-center items-center md:space-x-10">
+        <div className="">
+          <img
+            src="/assets/Frame 10.png"
+            alt="arrow"
+            className="w-20 md:w-40 lg:w-45"
+          />
         </div>
-        <p className="font-bold text-[80px] leading-20">
-          <span className="block">FROM</span>
-          <span className="block">CONCEPT</span>
-          <span className="block">TO</span>
-          <span className="block">CARE.</span>
-        </p>
+        <div className=" text-[26px] md:text-6xl md:w-1/2 leading-9 md:leading-20">
+          <span className="font-extrabold block">FROM</span>
+          <span className="font-extrabold block">CONCEPT</span>
+          <span className=" font-extrabold block">TO</span>
+          <span className="font-extrabold block">CARE.</span>
+        </div>
       </div>
 
       <div>
-        <p className="text-2xl">
+        <p className="md:text-2xl leading-5  md:leading-7 lg:leading-9">
           SANDHU TRAVELS was born from a simple desire to help others in times
           of need. Based in Chandigarh, our small yet dedicated team of drivers
           started by providing fast and reliable ambulance services within the

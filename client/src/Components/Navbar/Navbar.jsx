@@ -24,7 +24,7 @@ function Navbar() {
         isScrolled ? "bg-offwhite shadow-md" : ""
       }`}
     >
-      <div className="flex justify-between items-center h-[96px] px-6 md:px-[51px]">
+      <div className="flex justify-between items-center h-[50px] md:h-[96px] px-6 md:px-[51px]">
         <Logo />
         <div className="hidden md:flex items-baseline font-roboto space-x-8">
           {[
@@ -36,7 +36,7 @@ function Navbar() {
               key={index}
               to={path}
               className={({ isActive }) =>
-                `px-6 py-1 rounded-2xl cursor-pointer font-semibold ${
+                `px-6 py-1 rounded-2xl cursor-pointer ${
                   isActive ? "bg-red text-white" : "text-black hover:text-gray"
                 }`
               }
@@ -70,7 +70,7 @@ function Navbar() {
           {[
             { path: "/", label: "Home" },
             { path: "/about", label: "About" },
-            { path: "/contact", label: "Contact Us" },
+            { path: "/contact", label: "Contact" },
           ].map(({ path, label }, index) => (
             <NavLink
               key={index}

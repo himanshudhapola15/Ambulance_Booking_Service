@@ -7,7 +7,7 @@ function ContactPage() {
   return (
     <div>
       <Navbar />
-      <div className="mt-[96px]">
+      <div className="mt-[60px] md:mt-[96px]">
         <Contact />
         <Footer />
       </div>

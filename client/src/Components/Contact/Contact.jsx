@@ -25,10 +25,11 @@ function Contact() {
 
     const loadingToast = toast.loading("Please wait... 🚑", {
       style: {
-        background: "#000",
+        background: "#333333",
         color: "#fff",
         fontWeight: "bold",
-        padding: "12px",
+        padding: window.innerWidth < 768 ? "8px" : "12px",
+        fontSize: window.innerWidth < 768 ? "12px" : "16px",
         borderRadius: "8px",
       },
     });
@@ -49,10 +50,11 @@ function Contact() {
       toast.success(response.data.message || "Successful!", {
         id: loadingToast,
         style: {
-          background: "#000",
+          background: "#333333",
           color: "#fff",
           fontWeight: "bold",
-          padding: "12px",
+          padding: window.innerWidth < 768 ? "8px" : "12px",
+          fontSize: window.innerWidth < 768 ? "12px" : "16px",
           borderRadius: "8px",
         },
       });
@@ -62,10 +64,11 @@ function Contact() {
       toast.error(error.response?.data?.message || "Something went wrong!", {
         id: loadingToast,
         style: {
-          background: "#000",
+          background: "#333333",
           color: "#fff",
           fontWeight: "bold",
-          padding: "12px",
+          padding: window.innerWidth < 768 ? "8px" : "12px",
+          fontSize: window.innerWidth < 768 ? "12px" : "16px",
           borderRadius: "8px",
         },
       });
@@ -73,36 +76,35 @@ function Contact() {
   };
 
   return (
-    <div className="mx-20 font-roboto space-y-10 mb-20">
-      <div className="space-y-2">
-        <h1 className="text-7xl font-bold text-black">Get in touch</h1>
-        <p className="text-gray">
+    <div className="font-roboto w-full space-y-10 mb-20 mt-20 px-5 sm:px-10">
+      <div className="text-center sm:text-left">
+        <p className="text-4xl sm:text-6xl font-extrabold text-black">
+          Get in touch
+        </p>
+        <p className="text-gray font-bold text-lg sm:text-2xl">
           Feel free to reach out to our friendly team!
         </p>
       </div>
-      <div className="flex gap-60">
+      <div className="flex space-y-10 lg:space-y-0 flex-wrap items-center justify-center lg:justify-evenly">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="border rounded-4xl p-16 space-y-10"
+          className="border w-full lg:w-1/2 rounded-3xl p-6 sm:p-10 lg:p-16 space-y-6"
         >
-          <div className="flex space-x-10">
-            <div className="flex flex-col space-y-3 w-1/2">
-              <label className="font-bold">Name*</label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="flex flex-col space-y-2">
+              <label className="font-bold text-[12px] md:text-lg">Name*</label>
               <input
                 {...register("userName", { required: "Name is required" })}
-                className="outline-none border-b-2 text-[20px] p-2"
+                className="outline-none text-[12px] border-b-2 md:text-lg py-2"
                 placeholder="Name"
                 type="text"
               />
               {errors.userName && (
-                <p className="text-red text-sm">
-                  {errors.userName.message}
-                </p>
+                <p className="text-red text-sm">{errors.userName.message}</p>
               )}
             </div>
-
-            <div className="flex flex-col space-y-3 w-1/2">
-              <label className="font-bold">Phone*</label>
+            <div className="flex flex-col space-y-2">
+              <label className="font-bold text-[12px] md:text-lg">Phone*</label>
               <input
                 {...register("userPhone", {
                   required: "Phone number is required",
@@ -111,20 +113,17 @@ function Contact() {
                     message: "Phone number must be 10 digits",
                   },
                 })}
-                className="outline-none border-b-2 text-[20px] p-2"
+                className="outline-none border-b-2 text-[12px] md:text-lg py-2"
                 placeholder="Phone"
                 type="text"
               />
               {errors.userPhone && (
-                <p className="text-red text-sm">
-                  {errors.userPhone.message}
-                </p>
+                <p className="text text-sm">{errors.userPhone.message}</p>
               )}
             </div>
           </div>
-
-          <div className="flex flex-col space-y-3">
-            <label className="font-bold">Email*</label>
+          <div className="flex flex-col space-y-2">
+            <label className="font-bold text-[12px] md:text-lg">Email*</label>
             <input
               {...register("userEmail", {
                 required: "Email is required",
@@ -133,7 +132,7 @@ function Contact() {
                   message: "Email must be a valid Gmail address",
                 },
               })}
-              className="outline-none border-b-2 text-[20px] p-2"
+              className="outline-none border-b-2 text-[12px] md:text-lg py-2"
               placeholder="Email"
               type="email"
             />
@@ -141,60 +140,59 @@ function Contact() {
               <p className="text-red text-sm">{errors.userEmail.message}</p>
             )}
           </div>
-
-          <div className="flex flex-col space-y-3">
-            <label className="font-bold">Message*</label>
+          <div className="flex flex-col space-y-2">
+            <label className="font-bold text-[12px] md:text-lg">Message*</label>
             <input
               {...register("userMessage", { required: "Message is required" })}
-              className="outline-none border-b-2 text-[20px] p-2"
+              className="outline-none border-b-2 text-[12px] md:text-lg py-2 resize-none"
               placeholder="Message"
               rows="3"
             />
             {errors.userMessage && (
-              <p className="text-red text-sm">
-                {errors.userMessage.message}
-              </p>
+              <p className="text-red text-sm">{errors.userMessage.message}</p>
             )}
           </div>
 
-          <div className="flex justify-end">
-            <Button text="Submit" />
+          <div className="flex pt-1 justify-end ">
+            <Button
+              text="Submit"
+              width="w-2/5 md:w-2/3 lg:w-5/12 max-w-[250px]"
+              height="px-4 py-2 md:py-3"
+              textsize="text-xs md:text-base lg:text-lg"
+              iconsize="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9"
+            />
           </div>
         </form>
-
-
-        <div className="space-y-8 flex flex-col justify-center">
+        <div className="space-y-2 lg:space-y-6 flex flex-col md:justify-center">
           <div className="flex gap-3 items-center">
-            <div className="w-11 h-11 bg-red text-2xl flex justify-center items-center rounded-2xl">
-              <IoLocation className="text-white self-center" />
+            <div className="w-10 h-10 bg-red text-xl flex justify-center items-center rounded-xl">
+              <IoLocation className="text-white" />
             </div>
-            <p className="w-[241px] cursor-pointer hover:underline">
+            <p className="sm:text-left w-64 text-xs md:text-base">
               1234 Maple Grove Lane, Rivertown, XY 78901
             </p>
           </div>
           <div className="flex gap-3 items-center">
-            <div className="w-11 h-11 bg-red text-2xl flex justify-center items-center rounded-2xl">
-              <FaPhoneAlt className="text-white self-center" />
+            <div className="w-10 h-10 bg-red text-xl flex justify-center items-center rounded-xl">
+              <FaPhoneAlt className="text-white" />
             </div>
-            <p className="cursor-pointer hover:underline">+91-90985 xxxxx</p>
+            <p className="text-xs md:text-base">+91-90985 xxxxx</p>
           </div>
           <div className="flex gap-3 items-center">
-            <div className="w-11 h-11 bg-red text-2xl flex justify-center items-center rounded-2xl">
-              <IoMdMail className="text-white self-center" />
+            <div className="w-10 h-10 bg-red text-xl flex justify-center items-center rounded-xl">
+              <IoMdMail className="text-white" />
             </div>
-            <p className="cursor-pointer hover:underline">
-              sandhutravels@gmail.com
-            </p>
+            <p className="text-xs md:text-base">sandhutravels@gmail.com</p>
           </div>
-          <div className="space-y-3">
-            <p className="uppercase font-medium text-gray text-[20px]">
-              Contact With us at
+          <div className="space-y-3 mt-5">
+            <p className="uppercase text-center md:text-left font-medium text-gray text-lg">
+              Contact with us at
             </p>
-            <div className="flex gap-5">
-              <FaFacebook className="text-5xl cursor-pointer" />
-              <AiFillInstagram className="text-5xl cursor-pointer" />
-              <FaXTwitter className="text-5xl cursor-pointer" />
-              <FaWhatsapp className="text-5xl cursor-pointer" />
+            <div className="flex gap-4 justify-center sm:justify-start">
+              <FaFacebook className="text-3xl cursor-pointer" />
+              <AiFillInstagram className="text-3xl cursor-pointer" />
+              <FaXTwitter className="text-3xl cursor-pointer" />
+              <FaWhatsapp className="text-3xl cursor-pointer" />
             </div>
           </div>
         </div>

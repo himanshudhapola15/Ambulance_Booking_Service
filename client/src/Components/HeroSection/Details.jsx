@@ -20,10 +20,11 @@ function Details() {
 
     const loadingToast = toast.loading("Please wait... 🚑", {
       style: {
-        background: "#000",
+        background: "#333333",
         color: "#fff",
         fontWeight: "bold",
-        padding: "12px",
+        padding: window.innerWidth < 768 ? "8px" : "12px",
+        fontSize: window.innerWidth < 768 ? "12px" : "16px",
         borderRadius: "8px",
       },
     });
@@ -44,10 +45,11 @@ function Details() {
       toast.error(error.response?.data?.message || "Something went wrong!", {
         id: loadingToast,
         style: {
-          background: "#000",
+          background: "#333333",
           color: "#fff",
           fontWeight: "bold",
-          padding: "12px",
+          padding: window.innerWidth < 768 ? "8px" : "12px",
+          fontSize: window.innerWidth < 768 ? "12px" : "16px",
           borderRadius: "8px",
         },
       });
@@ -59,17 +61,19 @@ function Details() {
       <section className="w-1/3 lg:w-1/2 leading-5 md:leading-8 lg:leading-20 text-sm md:text-3xl lg:text-7xl">
         Instant Ambulance Service
       </section>
-      <section className="text-[7px] md:text-base">Fast, Simple & Reliable</section>
+      <section className="text-[7px] md:text-base">
+        Fast, Simple & Reliable
+      </section>
 
       <section className="flex flex-col justify-center backdrop-blur-md w-1/3 rounded-2xl md:rounded-4xl">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-2 md:p-6 lg:p-12 space-y-2 md:space-y-5 lg:space-y-8"
+          className="p-2 md:p-6 lg:p-8 space-y-2 md:space-y-5 lg:space-y-8"
         >
           <div className="flex flex-col md:space-y-1">
             <input
               {...register("userName", { required: "Name is required" })}
-              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[20px] p-1"
+              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[16px] lg:text-[20px] p-1"
               placeholder="Name*"
               type="text"
             />
@@ -88,7 +92,7 @@ function Details() {
                   message: "Phone number must be 10 digits",
                 },
               })}
-              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[20px] p-1 md:p-2"
+              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[16px] lg:text-[20px] p-1 md:p-2"
               placeholder="Phone*"
               type="tel"
             />
@@ -99,10 +103,13 @@ function Details() {
             )}
           </div>
 
-          <div className="flex justify-end ">
+          <div className="flex pt-1  justify-end ">
             <Button
-              text="Book Now"
-              className="px-6 py-2 bg-red text-white rounded-lg"
+              text="Submit"
+              width="w-3/5 md:w-2/4 lg:w-5/12 max-w-[250px]"
+              height="px-2 pr-4 py-1 md:py-2"
+              textsize="text-[6px] md:text-[10px] lg:text-[16px]"
+              iconsize="w-3.5 h-3.5 md:w-5 md:h-5 lg:w-8 lg:h-8"
             />
           </div>
         </form>
