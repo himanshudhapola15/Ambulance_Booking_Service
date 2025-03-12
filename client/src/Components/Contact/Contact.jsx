@@ -76,7 +76,7 @@ function Contact() {
   };
 
   return (
-    <div className="font-roboto lg:ml-15 w-full space-y-10 mb-20 mt-20 md:mt-40 sm:px-10">
+    <div className="font-roboto lg:pl-25 w-full space-y-10 mb-20 mt-20 md:mt-40 sm:px-10">
       <div className="text-center sm:text-left">
         <p className="text-4xl sm:text-6xl font-extrabold text-black">
           Get in touch
@@ -85,7 +85,7 @@ function Contact() {
           Feel free to reach out to our friendly team!
         </p>
       </div>
-      <div className="flex lg:gap-40 gap-10 mx-3 lg:space-y-10 flex-wrap items-center">
+      <div className="flex lg:gap-40 md:mx-0 mx-5 gap-10 lg:space-y-10 flex-wrap items-center">
         <form
           autoComplete="off"
           onSubmit={handleSubmit(onSubmit)}
@@ -165,9 +165,9 @@ function Contact() {
           <div className="flex pt-1 justify-end ">
             <Button
               text="Submit"
-              width="w-3/6 md:w-2/3 lg:w-5/12 max-w-[250px]"
+              width="w-1/2 md:w-2/3 lg:w-5/12 max-w-[250px]"
               height="px-4 py-2 md:py-3"
-              textsize="text-xs md:text-base lg:text-lg"
+              textsize="text-sm md:text-base lg:text-lg"
               iconsize="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9"
             />
           </div>

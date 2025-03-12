@@ -22,7 +22,7 @@ function Testimonial() {
   };
 
   const isPrevDisabled = activeIndex === 0;
-  const isNextDisabled = activeIndex >= totalItems - (isSmallScreen ? 1 : 3);
+  const isNextDisabled = activeIndex >= totalItems - (isSmallScreen ? 1 : 1);
 
   const items = testimonialData.map((item, index) => (
     <Card
@@ -48,15 +48,15 @@ function Testimonial() {
           responsive={{
             0: { items: 1 },
             768: { items: 1.2},
-            1024: { items: 2},
-            1250: { items: 3 },
+            1024: { items: 1.2},
+            1250: { items: 1.2 },
           }}
           controlsStrategy="alternate"
           onSlideChanged={handleSlideChanged}
           disableDotsControls
           renderPrevButton={() => (
             <button
-              className={` cursor-pointer absolute top-1/2 transform -translate-y-1/2 left-2 sm:left-[-30px] lg:left-[-20px] md:left-[-1px] text-2xl md:text-4xl lg:text-5xl ${
+              className={` cursor-pointer absolute top-1/2 transform -translate-y-1/2 left-2 sm:left-[-30px] lg:left-[-40px] md:left-[-1px] text-2xl md:text-4xl lg:text-5xl ${
                 isPrevDisabled
                   ? "text-lightgray cursor-not-allowed"
                   : "text-black"
@@ -68,7 +68,7 @@ function Testimonial() {
           )}
           renderNextButton={() => (
             <button
-              className={`cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-2 sm:right-[-30px] lg:right-[-20px] md:right-[-1px] text-2xl md:text-4xl lg:text-5xl ${
+              className={`cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-2 sm:right-[-30px] lg:right-[-40px] md:right-[-1px] text-2xl md:text-4xl lg:text-5xl ${
                 isNextDisabled
                   ? "text-lightgray cursor-not-allowed"
                   : "text-black"

@@ -18,7 +18,7 @@ export const equipmentData = [
   {
     key: "4",
     image: "/assets/bp_monitor.png",
-    para: "BP Monito",
+    para: "BP Monitor",
   },
   {
     key: "5",

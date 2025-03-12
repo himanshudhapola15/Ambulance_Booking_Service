@@ -3,7 +3,7 @@ import React from "react";
 function Card({ item, isCenter, index, activeIndex, isSmallScreen }) {
   const isActiveCard = isSmallScreen
     ? index === activeIndex 
-    : index === activeIndex + 1;  
+    : index === activeIndex;  
 
   return (
     <div

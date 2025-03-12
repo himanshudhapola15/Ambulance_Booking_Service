@@ -4,23 +4,28 @@ import { mainCarouselData } from "./MainCarouselData";
 
 const Carousel = () => {
   const items = mainCarouselData.map((item) => (
-    <img
-      className="w-full h-[200px] sm:h-[250px] md:h-[450px] lg:h-[768px] rounded-2xl md:rounded-4xl"
-      key={item.key}
-      role="presentation"
-      src={item.image}
-      alt=""
-    />
+    <div key={item.key} className="relative">
+      <img
+        className="w-full h-[500px] sm:h-[400px] md:h-[550px] lg:h-[800px] md:rounded-2xl lg:rounded-4xl"
+        role="presentation"
+        src={item.image}
+        alt=""
+      />
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-offwhite/100 to-transparent block md:hidden md:rounded-2xl lg:rounded-4xl" />
+    </div>
   ));
+
   return (
-    <AliceCarousel
-      disableButtonsControls
-      autoPlay
-      autoPlayInterval={5000}
-      infinite
-      items={items}
-      disableDotsControls
-    />
+    <div className="relative">
+      <AliceCarousel
+        disableButtonsControls
+        autoPlay
+        autoPlayInterval={5000}
+        infinite
+        items={items}
+        disableDotsControls
+      />
+    </div>
   );
 };
 

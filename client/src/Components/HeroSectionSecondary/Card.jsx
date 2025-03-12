@@ -39,7 +39,7 @@ function Card({ item }) {
             : "bg-lightgray text-darkgray"
         } hover:bg-red hover:text-white`}
     >
-      <div>
+      <div className="space-y-3">
         <h1 className="text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
           {item.heading}
         </h1>

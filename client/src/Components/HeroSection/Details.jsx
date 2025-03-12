@@ -57,21 +57,21 @@ function Details() {
   };
 
   return (
-    <div className="font-roboto h-[200px] sm:h-[250px] justify-center md:h-[450px] lg:h-[768px] md:mt-0 md:justify-center flex flex-col text-white space-y-1 md:space-y-3 lg:space-y-10">
-      <section className="w-full md:w-2/3 leading-5 md:leading-10 lg:leading-20 text-2xl md:text-5xl lg:text-7xl">
+    <div className="font-roboto h-[450px] sm:h-[400px] md:justify-center md:h-[550px] lg:h-[768px] md:mt-0 flex flex-col text-white space-y-1 md:space-y-3 lg:space-y-10">
+      <section className="text-center w-full md:text-left mt-10 px-20 md:px-0 md:w-2/3 leading-5 md:leading-10 lg:leading-20 text-2xl md:text-5xl lg:text-7xl">
         Instant Ambulance Service
       </section>
-      <section className="text-[8px] md:text-xl">
+      <section className="text-[12px] text-center md:my-0 my-4 md:text-left md:text-xl">
         Fast, Simple & Reliable
       </section>
 
-      <section className="flex flex-col justify-center backdrop-blur-sm lg:backdrop-blur-md lg:w-3/7 rounded-2xl md:rounded-4xl">
+      <section className="flex flex-col py-10 md:py-6 md:px-6 md:mt-8 justify-center md:mx-0 mx-10 backdrop-blur-sm lg:backdrop-blur-md lg:w-3/7 rounded-2xl md:rounded-4xl">
         <form
           autoComplete="off"
           onSubmit={handleSubmit(onSubmit)}
-          className="p-2 md:p-6 lg:p-8 space-y-2 md:space-y-5 lg:space-y-8"
+          className="p-2 md:p-8 lg:p-12 space-y-10 md:space-y-5 lg:space-y-8"
         >
-          <div className="flex flex-col md:space-y-1">
+          <div className="flex flex-col px-8 md:px-0 md:space-y-1">
             <input
               {...register("userName", { required: "Name is required" })}
               className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[10px] md:text-[16px] lg:text-[20px] p-1"
@@ -84,7 +84,7 @@ function Details() {
               </p>
             )}
           </div>
-          <div className="flex flex-col md:space-y-1">
+          <div className="flex flex-col px-8 md:px-0 md:space-y-1">
             <input
               {...register("userPhone", {
                 required: "Phone number is required",
@@ -104,13 +104,13 @@ function Details() {
             )}
           </div>
 
-          <div className="flex pt-1  justify-end ">
+          <div className="flex pt-1 md:justify-end px-8 md:px-0">
             <Button
               text="Submit"
-              width="w-2/5 md:w-2/4 lg:w-5/12 max-w-[250px]"
-              height="px-5 pr-4 py-1.5 md:py-4 lg:py-3"
-              textsize="text-[8px] md:text-[15px] lg:text-[16px]"
-              iconsize="w-4 h-4 md:w-9 md:h-9 lg:w-8 lg:h-8"
+              width="w-2/3 md:w-2/4 lg:w-5/12 max-w-[250px]"
+              height="px-5 pr-4 py-3 md:py-4 lg:py-3"
+              textsize="text-[10px] md:text-[15px] lg:text-[16px]"
+              iconsize="w-7 h-7 md:w-9 md:h-9 lg:w-8 lg:h-8"
             />
           </div>
         </form>
@@ -127,7 +127,9 @@ function Details() {
                 You will receive a call in less than 60 seconds. If you don't
                 receive the call, please contact us at:
               </p>
-              <span className=" text-red text-base md:text-xl font-bold">1234567890</span>
+              <span className=" text-red text-base md:text-xl font-bold">
+                1234567890
+              </span>
             </div>
             <div className=" flex justify-center items-center mt-5">
               <button

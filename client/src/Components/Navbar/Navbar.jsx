@@ -36,7 +36,7 @@ function Navbar() {
               key={index}
               to={path}
               className={({ isActive }) =>
-                `px-6 py-1 rounded-2xl cursor-pointer ${
+                `px-6 py-1 rounded-2xl font-bold cursor-pointer ${
                   isActive ? "bg-red text-white" : "text-black hover:text-gray"
                 }`
               }
@@ -66,25 +66,24 @@ function Navbar() {
           <FiX />
         </button>
 
-        <div className="flex flex-col mt-20 h-full space-y-2 font-roboto text-lg">
+        <div className="flex flex-col space-y-5 mt-20 h-full font-roboto text-lg">
           {[
             { path: "/", label: "Home" },
             { path: "/about", label: "About" },
             { path: "/contact", label: "Contact" },
           ].map(({ path, label }, index) => (
-            <div className="px-4">
+            <div className="px-4 ">
               <NavLink
                 key={index}
                 to={path}
                 className={({ isActive }) =>
-                  `lg:px-10  w-full block py-1 text-sm cursor-pointer ${
-                    isActive ? "text-gray" : "text-black"
+                  `lg:px-10 w-full block py-1 font-bold text-black uppercase text-sm cursor-pointer ${
+                    isActive ? " border-b-2 border-red" : " border-b-2"
                   }`
                 }
               >
                 {label}
               </NavLink>
-              <div className="h-[1px] bg-gray w-full"></div>
             </div>
           ))}
         </div>

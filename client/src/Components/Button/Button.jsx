@@ -2,7 +2,7 @@ import React from "react";
 
 function Button({ text, width, height, textsize, iconsize }) {
   return (
-    <div className="relative w-full flex justify-end">
+    <div className="relative w-full flex justify-center md:justify-end">
       <button
         className={`relative inline-flex cursor-pointer items-center justify-start lg:justify-end ${width} ${height} overflow-hidden md:font-semibold transition-all duration-500 ease-in-out bg-red text-white rounded-full group lg:bg-white lg:text-black lg:hover:bg-red lg:hover:text-white`}
       >

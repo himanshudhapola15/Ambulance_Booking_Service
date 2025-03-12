@@ -33,7 +33,7 @@ function Card({ item }) {
   return (
     <div
       ref={cardRef}
-      className={`group cursor-pointer lg:h-[700px] rounded-4xl lg:w-1/3 transition-all duration-300 ease-in-out flex flex-col 
+      className={`group cursor-pointer lg:h-[700px] font-roboto rounded-4xl lg:w-1/3 transition-all duration-300 ease-in-out flex flex-col 
         ${
           isCentered && window.innerWidth < 1024
             ? "bg-red text-white"
@@ -44,7 +44,7 @@ function Card({ item }) {
       <img src={item.image} alt="" className="rounded-t-4xl" />
       <div className="flex group-hover:text-white flex-col flex-grow justify-between px-6 pb-4">
         <div className="mt-6 space-y-2">
-          <h1 className="text-[20px] md:text-[30px]">{item.heading}</h1>
+          <h1 className="text-[20px] md:text-[30px] font-semibold">{item.heading}</h1>
           <p className="text-sm md:text-lg leading-4 md:leading-5.5">
             {item.para}
           </p>
@@ -64,7 +64,7 @@ function Card({ item }) {
             {equipmentData.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center items-center"
+                className="flex flex-col space-y-4 justify-center items-center"
               >
                 <div className="bg-white rounded-full">
                   <img
@@ -73,7 +73,13 @@ function Card({ item }) {
                     className="w-9 h-9 bg-offwhite rounded-full"
                   />
                 </div>
-                <p className="text-center text-[9px] md:text-[12px] font-roboto">
+                <p
+                  className={`${
+                    isCentered && window.innerWidth < 1024
+                      ? "text-white"
+                      : "text-gray"
+                  }  text-xs md:text-base group-hover:text-lightgray font-semibold} text-center text-[9px] md:text-[12px] font-roboto`}
+                >
                   {item.para}
                 </p>
               </div>

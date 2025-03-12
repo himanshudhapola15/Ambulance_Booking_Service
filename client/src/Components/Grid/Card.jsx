@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 function Card({ item }) {
-  const [isFlipped, setIsFlipped] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -15,16 +13,12 @@ function Card({ item }) {
   }, []);
 
   return (
-    <motion.div
+    <div
       className={`relative w-full h-full ${
         isSmallScreen ? item.rowSpanSamllScreen : item.rowSpan
       } cursor-pointer rounded-lg md:rounded-2xl lg:rounded-4xl shadow-lg`}
-      onClick={() => setIsFlipped(!isFlipped)}
-      animate={{ rotateY: isFlipped ? 180 : 0 }}
-      transition={{ duration: 0.6 }}
-      style={{ transformStyle: "preserve-3d" }}
     >
-      <div className="absolute w-full h-full flex items-center justify-center backface-hidden">
+      <div className="absolute w-full h-full flex items-center justify-center">
         <img
           src={item.image}
           alt={item.heading}
@@ -32,7 +26,7 @@ function Card({ item }) {
         />
       </div>
 
-      <div className="absolute w-full h-full flex items-center justify-center backface-hidden rotate-y-180">
+      {/* <div className="absolute w-full h-full flex items-center justify-center backface-hidden rotate-y-180">
         <div className="w-full gap-1 lg:gap-4 h-full bg-lightgray lg:p-10 md:p-5 p-2 flex flex-col items-center justify-center lg:justify-center rounded-lg md:rounded-2xl lg:rounded-4xl shadow-lg">
           <h1 className="text-black font-bold text-[8px] md:text-[15px] lg:text-lg xl:text-2xl">
             {item.heading}
@@ -45,8 +39,8 @@ function Card({ item }) {
             {item.para}
           </p>
         </div>
-      </div>
-    </motion.div>
+      </div> */}
+    </div>
   );
 }
 
