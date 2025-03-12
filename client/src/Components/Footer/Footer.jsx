@@ -4,8 +4,8 @@ import { AiFillInstagram } from "react-icons/ai";
 
 function Footer() {
   return (
-    <footer className="font-roboto pb-10">
-      <div className="h-[1px] bg-gray mb-10 mx-auto w-11/12 md:w-full"></div>
+    <footer className="font-roboto px-10 pb-10">
+      <div className="h-[1px] bg-gray mb-10 w-full"></div>
       <div className="flex flex-col items-center space-y-10">
         <div className="grid justify-items-center grid-cols-1 md:grid-cols-4 gap-10 md:gap-10 w-11/12 md:w-full text-center md:text-left">
           <div className="space-y-4">
@@ -51,8 +51,8 @@ function Footer() {
             ))}
           </div>
 
-          <div className="space-y-2">
-            <h1 className="font-semibold text-lg">Others</h1>
+          <div className="space-y-2 mr-3  0">
+            <h1 className="font-semibold text-lg ">Others</h1>
             <p className="cursor-pointer hover:underline text-sm">
               Privacy Policy
             </p>
@@ -62,7 +62,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="text-sm text-gray-600 text-center">
+        <div className="text-sm text-gray text-center">
           ©2025 by Sandhu Travels. All rights reserved.
         </div>
       </div>

@@ -76,7 +76,7 @@ function Contact() {
   };
 
   return (
-    <div className="font-roboto w-full space-y-10 mb-20 mt-20 px-5 sm:px-10">
+    <div className="font-roboto lg:ml-15 w-full space-y-10 mb-20 mt-20 md:mt-40 sm:px-10">
       <div className="text-center sm:text-left">
         <p className="text-4xl sm:text-6xl font-extrabold text-black">
           Get in touch
@@ -85,13 +85,14 @@ function Contact() {
           Feel free to reach out to our friendly team!
         </p>
       </div>
-      <div className="flex space-y-10 lg:space-y-0 flex-wrap items-center justify-center lg:justify-evenly">
+      <div className="flex lg:gap-40 gap-10 mx-3 lg:space-y-10 flex-wrap items-center">
         <form
+          autoComplete="off"
           onSubmit={handleSubmit(onSubmit)}
           className="border w-full lg:w-1/2 rounded-3xl p-6 sm:p-10 lg:p-16 space-y-6"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col md:space-y-2">
               <label className="font-bold text-[12px] md:text-lg">Name*</label>
               <input
                 {...register("userName", { required: "Name is required" })}
@@ -100,10 +101,12 @@ function Contact() {
                 type="text"
               />
               {errors.userName && (
-                <p className="text-red text-sm">{errors.userName.message}</p>
+                <p className="text-red text-[11px] md:text-sm">
+                  {errors.userName.message}
+                </p>
               )}
             </div>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col md:space-y-2">
               <label className="font-bold text-[12px] md:text-lg">Phone*</label>
               <input
                 {...register("userPhone", {
@@ -118,11 +121,13 @@ function Contact() {
                 type="text"
               />
               {errors.userPhone && (
-                <p className="text text-sm">{errors.userPhone.message}</p>
+                <p className="text-red text-[11px] md:text-sm">
+                  {errors.userPhone.message}
+                </p>
               )}
             </div>
           </div>
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col md:space-y-2">
             <label className="font-bold text-[12px] md:text-lg">Email*</label>
             <input
               {...register("userEmail", {
@@ -137,10 +142,12 @@ function Contact() {
               type="email"
             />
             {errors.userEmail && (
-              <p className="text-red text-sm">{errors.userEmail.message}</p>
+              <p className="text-red text-[11px] md:text-sm">
+                {errors.userEmail.message}
+              </p>
             )}
           </div>
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col md:space-y-2">
             <label className="font-bold text-[12px] md:text-lg">Message*</label>
             <input
               {...register("userMessage", { required: "Message is required" })}
@@ -149,14 +156,16 @@ function Contact() {
               rows="3"
             />
             {errors.userMessage && (
-              <p className="text-red text-sm">{errors.userMessage.message}</p>
+              <p className="text-red text-[11px] md:text-sm">
+                {errors.userMessage.message}
+              </p>
             )}
           </div>
 
           <div className="flex pt-1 justify-end ">
             <Button
               text="Submit"
-              width="w-2/5 md:w-2/3 lg:w-5/12 max-w-[250px]"
+              width="w-3/6 md:w-2/3 lg:w-5/12 max-w-[250px]"
               height="px-4 py-2 md:py-3"
               textsize="text-xs md:text-base lg:text-lg"
               iconsize="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9"
@@ -189,10 +198,10 @@ function Contact() {
               Contact with us at
             </p>
             <div className="flex gap-4 justify-center sm:justify-start">
-              <FaFacebook className="text-3xl cursor-pointer" />
-              <AiFillInstagram className="text-3xl cursor-pointer" />
-              <FaXTwitter className="text-3xl cursor-pointer" />
-              <FaWhatsapp className="text-3xl cursor-pointer" />
+              <FaFacebook className="text-3xl hover:text-blue-600 cursor-pointer" />
+              <AiFillInstagram className="text-3xl hover:text-pink-500 cursor-pointer" />
+              <FaXTwitter className="text-3xl hover:text-black cursor-pointer" />
+              <FaWhatsapp className="text-3xl hover:text-green-500 cursor-pointer" />
             </div>
           </div>
         </div>

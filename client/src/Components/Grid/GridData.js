@@ -4,6 +4,7 @@ export const gridData = [
     heading: "Quick Action Saves a Life",
     image: "/assets/a-1920x1080.png",
     rowSpan: "row-span-10",
+    rowSpanSamllScreen: "row-span-7",
     para: "When a car accident occurred, our team was on-site within minutes, stabilizing the injured. Our paramedics ensured the patient received critical care during transport. ",
   },
   {
@@ -11,6 +12,7 @@ export const gridData = [
     heading: "Quick Action Saves a Life",
     image: "/assets/a1-1920x1080.png",
     rowSpan: "row-span-6",
+    rowSpanSamllScreen: "row-span-3",
     para: "When a car accident occurred, our team was on-site within minutes, stabilizing the injured. Our paramedics ensured the patient received critical care during transport. ",
   },
   {
@@ -18,6 +20,7 @@ export const gridData = [
     heading: "Quick Action Saves a Life",
     image: "/assets/a2-1920x1080.png",
     rowSpan: "row-span-4",
+    rowSpanSamllScreen: "row-span-3",
     para: "When a car accident occurred, our team was on-site within minutes, stabilizing the injured. Our paramedics ensured the patient received critical care during transport. ",
   },
   {
@@ -25,6 +28,7 @@ export const gridData = [
     heading: "Quick Action Saves a Life",
     image: "/assets/IMG-20240209-WA0032-1920x1080.png",
     rowSpan: "row-span-6",
+    rowSpanSamllScreen: "row-span-4",
     para: "When a car accident occurred, our team was on-site within minutes, stabilizing the injured. Our paramedics ensured the patient received critical care during transport. ",
   },
   {
@@ -32,6 +36,7 @@ export const gridData = [
     heading: "Quick Action Saves a Life",
     image: "/assets/IMG-20240209-WA0043-1920x1080.png",
     rowSpan: "row-span-4",
+    rowSpanSamllScreen: "row-span-3",
     para: "When a car accident occurred, our team was on-site within minutes, stabilizing the injured. Our paramedics ensured the patient received critical care during transport. ",
   },
 ];

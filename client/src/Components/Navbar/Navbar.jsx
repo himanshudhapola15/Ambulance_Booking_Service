@@ -55,7 +55,7 @@ function Navbar() {
       </div>
 
       <div
-        className={`fixed top-0 right-0 w-2/4 h-full bg-white shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 w-full h-full bg-white shadow-lg transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
       >
@@ -66,24 +66,26 @@ function Navbar() {
           <FiX />
         </button>
 
-        <div className="flex flex-col items-center mt-20 h-full space-y-2 font-roboto text-lg">
+        <div className="flex flex-col mt-20 h-full space-y-2 font-roboto text-lg">
           {[
             { path: "/", label: "Home" },
             { path: "/about", label: "About" },
             { path: "/contact", label: "Contact" },
           ].map(({ path, label }, index) => (
-            <NavLink
-              key={index}
-              to={path}
-              className={({ isActive }) =>
-                `px-10 py-1 text-sm rounded-4xl cursor-pointer ${
-                  isActive ? "bg-red text-white" : "text-black hover:text-gray"
-                }`
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              {label}
-            </NavLink>
+            <div className="px-4">
+              <NavLink
+                key={index}
+                to={path}
+                className={({ isActive }) =>
+                  `lg:px-10  w-full block py-1 text-sm cursor-pointer ${
+                    isActive ? "text-gray" : "text-black"
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+              <div className="h-[1px] bg-gray w-full"></div>
+            </div>
           ))}
         </div>
       </div>

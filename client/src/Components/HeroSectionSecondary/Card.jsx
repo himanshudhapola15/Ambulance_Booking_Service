@@ -1,8 +1,44 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function Card({ item }) {
+  const [isCentered, setIsCentered] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        const centerY = window.innerHeight / 2;
+
+        if (
+          window.innerWidth < 1024 &&
+          rect.top < centerY &&
+          rect.bottom > centerY
+        ) {
+          setIsCentered(true);
+        } else {
+          setIsCentered(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="relative cursor-pointer w-full h-full space-y-2 bg-lightgray text-darkgray p-6 lg:p-8 rounded-4xl font-roboto hover:bg-red hover:text-white transition-all duration-300 ease-in-out flex flex-col justify-between">
+    <div
+      ref={cardRef}
+      className={`relative cursor-pointer w-full h-full space-y-2 p-6 lg:p-8 
+        rounded-4xl font-roboto transition-all duration-300 ease-in-out flex flex-col justify-between
+        ${
+          isCentered && window.innerWidth < 1024
+            ? "bg-red text-white"
+            : "bg-lightgray text-darkgray"
+        } hover:bg-red hover:text-white`}
+    >
       <div>
         <h1 className="text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
           {item.heading}

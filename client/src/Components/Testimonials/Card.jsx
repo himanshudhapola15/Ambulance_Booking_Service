@@ -15,7 +15,7 @@ function Card({ item, isCenter, index, activeIndex, isSmallScreen }) {
         }
       `}
     >
-      <div className="space-y-2">
+      <div className="space-y-2 mb-10">
         <h1 className="text-xl md:text-4xl font-semibold">{item.name}</h1>
         <p
           className={`uppercase text-sm md:text-lg ${

@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 function Card({ item }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <motion.div
-      className={`relative w-full h-full ${item.rowSpan} cursor-pointer rounded-lg md:rounded-2xl lg:rounded-4xl shadow-lg`}
+      className={`relative w-full h-full ${
+        isSmallScreen ? item.rowSpanSamllScreen : item.rowSpan
+      } cursor-pointer rounded-lg md:rounded-2xl lg:rounded-4xl shadow-lg`}
       onClick={() => setIsFlipped(!isFlipped)}
       animate={{ rotateY: isFlipped ? 180 : 0 }}
       transition={{ duration: 0.6 }}

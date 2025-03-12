@@ -57,28 +57,29 @@ function Details() {
   };
 
   return (
-    <div className="font-roboto h-[200px] sm:h-[250px] md:h-[450px] lg:h-[768px] justify-center flex flex-col text-white space-y-1 md:space-y-5">
-      <section className="w-1/3 lg:w-1/2 leading-5 md:leading-8 lg:leading-20 text-sm md:text-3xl lg:text-7xl">
+    <div className="font-roboto h-[200px] sm:h-[250px] justify-center md:h-[450px] lg:h-[768px] md:mt-0 md:justify-center flex flex-col text-white space-y-1 md:space-y-3 lg:space-y-10">
+      <section className="w-full md:w-2/3 leading-5 md:leading-10 lg:leading-20 text-2xl md:text-5xl lg:text-7xl">
         Instant Ambulance Service
       </section>
-      <section className="text-[7px] md:text-base">
+      <section className="text-[8px] md:text-xl">
         Fast, Simple & Reliable
       </section>
 
-      <section className="flex flex-col justify-center backdrop-blur-md w-1/3 rounded-2xl md:rounded-4xl">
+      <section className="flex flex-col justify-center backdrop-blur-sm lg:backdrop-blur-md lg:w-3/7 rounded-2xl md:rounded-4xl">
         <form
+          autoComplete="off"
           onSubmit={handleSubmit(onSubmit)}
           className="p-2 md:p-6 lg:p-8 space-y-2 md:space-y-5 lg:space-y-8"
         >
           <div className="flex flex-col md:space-y-1">
             <input
               {...register("userName", { required: "Name is required" })}
-              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[16px] lg:text-[20px] p-1"
+              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[10px] md:text-[16px] lg:text-[20px] p-1"
               placeholder="Name*"
               type="text"
             />
             {errors.userName && (
-              <p className="text-red text-[5px] md:text-sm">
+              <p className="text-red text-[8px] md:text-sm">
                 {errors.userName.message}
               </p>
             )}
@@ -92,12 +93,12 @@ function Details() {
                   message: "Phone number must be 10 digits",
                 },
               })}
-              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[7px] md:text-[16px] lg:text-[20px] p-1 md:p-2"
+              className="w-full outline-none border-b-[0.5px] md:border-b-2 text-[10px] md:text-[16px] lg:text-[20px] p-1 md:p-2"
               placeholder="Phone*"
               type="tel"
             />
             {errors.userPhone && (
-              <p className="text-red text-[5px] md:text-sm">
+              <p className="text-red text-[8px] md:text-sm">
                 {errors.userPhone.message}
               </p>
             )}
@@ -106,10 +107,10 @@ function Details() {
           <div className="flex pt-1  justify-end ">
             <Button
               text="Submit"
-              width="w-3/5 md:w-2/4 lg:w-5/12 max-w-[250px]"
-              height="px-2 pr-4 py-1 md:py-2"
-              textsize="text-[6px] md:text-[10px] lg:text-[16px]"
-              iconsize="w-3.5 h-3.5 md:w-5 md:h-5 lg:w-8 lg:h-8"
+              width="w-2/5 md:w-2/4 lg:w-5/12 max-w-[250px]"
+              height="px-5 pr-4 py-1.5 md:py-4 lg:py-3"
+              textsize="text-[8px] md:text-[15px] lg:text-[16px]"
+              iconsize="w-4 h-4 md:w-9 md:h-9 lg:w-8 lg:h-8"
             />
           </div>
         </form>
@@ -117,21 +118,21 @@ function Details() {
 
       {isSuccessModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm">
-          <div className="bg-offwhite text-black px-16 py-10 rounded-4xl w-[500px] shadow-lg">
-            <h2 className="text-3xl font-bold mb-4 text-center">
+          <div className="bg-offwhite text-black px-5 md:px-16 py-10 rounded-4xl w-[350px] md:w-[500px] shadow-lg">
+            <h2 className="text-lg md:text-3xl font-bold mb-4 text-center">
               Thank you for using our service!
             </h2>
             <div className="flex flex-col gap-2 justify-center items-center">
-              <p className=" text-gray text-center leading-5">
+              <p className=" text-gray text-sm md:text-base text-center leading-5">
                 You will receive a call in less than 60 seconds. If you don't
                 receive the call, please contact us at:
               </p>
-              <span className=" text-red text-xl font-bold">1234567890</span>
+              <span className=" text-red text-base md:text-xl font-bold">1234567890</span>
             </div>
-            <div className=" flex justify-center items-center mt-6">
+            <div className=" flex justify-center items-center mt-5">
               <button
                 onClick={() => setIsSuccessModalOpen(false)}
-                className="cursor-pointer px-8 uppercase py-2 bg-[#D9D9D9] text-darkgray font-bold rounded-4xl"
+                className="cursor-pointer text-xs md:text-base px-6 md:px-8 uppercase py-2 bg-[#D9D9D9] text-darkgray font-bold rounded-4xl"
               >
                 close
               </button>

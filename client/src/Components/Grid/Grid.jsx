@@ -13,7 +13,7 @@ function Grid() {
           WHERE EVERY MOMENT MAKES A DIFFERENCE
         </h3>
       </div>
-      <div className="grid grid-cols-3 gap-1 md:gap-2 lg:gap-5 auto-rows-[minmax(25px,_1fr)] md:auto-rows-[minmax(37px,_1fr)] lg:auto-rows-[minmax(45px,_1fr)]">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2 lg:gap-5 auto-rows-[minmax(25px,_1fr)] md:auto-rows-[minmax(37px,_1fr)] lg:auto-rows-[minmax(45px,_1fr)]">
         {gridData.map((item) => (
           <Card item={item} key={item.key} />
         ))}
