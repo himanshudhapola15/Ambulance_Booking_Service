@@ -79,7 +79,7 @@ function Details() {
               type="text"
             />
             {errors.userName && (
-              <p className="text-red text-[10px] md:text-sm">
+              <p className="text-red text-[14px] md:text-sm">
                 {errors.userName.message}
               </p>
             )}
@@ -98,7 +98,7 @@ function Details() {
               type="tel"
             />
             {errors.userPhone && (
-              <p className="text-red text-[10px] md:text-sm">
+              <p className="text-red text-[14px] md:text-sm">
                 {errors.userPhone.message}
               </p>
             )}

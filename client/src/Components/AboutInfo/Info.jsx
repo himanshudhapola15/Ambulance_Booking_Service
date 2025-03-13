@@ -2,7 +2,7 @@ import React from "react";
 
 function Info() {
   return (
-    <div className="font-roboto mx-7 md:mx-10 mt-20 mb-20 text-black grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <div className="font-roboto mx-7 md:mx-16 mt-20 mb-20 text-black grid grid-cols-1 lg:grid-cols-2 gap-16">
       <div className="md:space-y-10 space-y-3">
         <h1 className="font-extrabold text-3xl md:text-5xl lg:text-7xl">
           What drives us?
