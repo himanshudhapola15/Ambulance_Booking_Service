@@ -24,7 +24,7 @@ function Navbar() {
         isScrolled ? "bg-offwhite shadow-md" : ""
       }`}
     >
-      <div className="flex justify-between items-center h-[50px] md:h-[96px] px-6 md:px-[51px]">
+      <div className="flex justify-between items-center h-[60px] md:h-[96px] px-6 md:px-[51px]">
         <Logo />
         <div className="hidden md:flex items-baseline font-roboto space-x-8">
           {[
@@ -47,7 +47,7 @@ function Navbar() {
         </div>
 
         <button
-          className="md:hidden text-2xl focus:outline-none"
+          className="md:hidden text-3xl focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FiX /> : <FiMenu />}
