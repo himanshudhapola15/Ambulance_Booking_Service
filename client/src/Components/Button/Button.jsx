@@ -6,7 +6,7 @@ function Button({ text, width, height, textsize, iconsize }) {
       <button
         className={`relative inline-flex cursor-pointer items-center justify-start lg:justify-end ${width} ${height} overflow-hidden md:font-semibold transition-all duration-500 ease-in-out bg-red text-white rounded-full group lg:bg-white lg:text-black lg:hover:bg-red lg:hover:text-white`}
       >
-        <span className="absolute lg:left-2 right-1 md:right-2 top-1/2 transform -translate-y-1/2 transition-none md:transition-all md:duration-500 md:ease-in-out md:group-hover:left-[calc(100%-50px)]">
+        <span className="absolute lg:left-2 right-1 md:right-2 top-1/2 transform -translate-y-1/2 transition-none md:transition-all md:duration-500 md:ease-in-out md:group-hover:left-[calc(100%-40px)]">
           <svg
             className={`${iconsize} p-0.5 rounded-full shadow-lg transition-all duration-500 ease-in-out bg-white text-black lg:bg-red lg:text-white lg:group-hover:bg-white lg:group-hover:text-black`}
             fill="none"
@@ -24,7 +24,7 @@ function Button({ text, width, height, textsize, iconsize }) {
         </span>
 
         <span
-          className={`uppercase ${textsize} font-bold transition-all duration-300 ease-out md:group-hover:-translate-x-full`}
+          className={` uppercase ${textsize} font-bold transition-all duration-300 ease-out md:group-hover:-translate-x-full`}
         >
           {text}
         </span>

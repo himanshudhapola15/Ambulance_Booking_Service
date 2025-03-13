@@ -56,7 +56,7 @@ function Testimonial() {
           disableDotsControls
           renderPrevButton={() => (
             <button
-              className={` cursor-pointer absolute top-1/2 transform -translate-y-1/2 left-2 sm:left-[-30px] lg:left-[-40px] md:left-[-1px] text-2xl md:text-4xl lg:text-5xl ${
+              className={` cursor-pointer absolute top-1/2 transform -translate-y-1/2 left-2 sm:left-[-30px] lg:left-[-40px] md:left-[-1px] text-4xl lg:text-5xl ${
                 isPrevDisabled
                   ? "text-lightgray cursor-not-allowed"
                   : "text-black"
@@ -68,7 +68,7 @@ function Testimonial() {
           )}
           renderNextButton={() => (
             <button
-              className={`cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-2 sm:right-[-30px] lg:right-[-40px] md:right-[-1px] text-2xl md:text-4xl lg:text-5xl ${
+              className={`cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-2 sm:right-[-30px] lg:right-[-40px] md:right-[-1px] text-4xl lg:text-5xl ${
                 isNextDisabled
                   ? "text-lightgray cursor-not-allowed"
                   : "text-black"

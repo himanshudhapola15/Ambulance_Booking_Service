@@ -6,7 +6,7 @@ const Carousel = () => {
   const items = mainCarouselData.map((item) => (
     <div key={item.key} className="relative">
       <img
-        className="w-full h-[500px] sm:h-[400px] md:h-[550px] lg:h-[800px] md:rounded-2xl lg:rounded-4xl"
+        className="w-full h-[580px] sm:h-[400px] md:h-[550px] lg:h-[800px] md:rounded-2xl lg:rounded-4xl"
         role="presentation"
         src={item.image}
         alt=""
