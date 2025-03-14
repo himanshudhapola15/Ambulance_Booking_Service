@@ -11,9 +11,18 @@ function Footer() {
           <div className="space-y-4">
             <div className="w-[150px] mx-auto md:mx-0">
               {" "}
-              <img src="/assets/Frame.png" alt="" className="w-full h-full" />
+              <img
+                src="/assets/Frame.png"
+                alt="Sandhu Travels Logo"
+                className="w-full hidden md:block h-full"
+              />
+              <img
+                src="/assets/Frame2.png"
+                alt="Sandhu Travels Logo"
+                className="w-full h-full md:hidden"
+              />
             </div>
-            <p className="text-sm md:text-base lg:w-60 text-gray-700">
+            <p className="text-sm lg:w-65  text-gray-700">
               24/7 ambulance booking for fast, reliable emergency and
               non-emergency transport.
             </p>
