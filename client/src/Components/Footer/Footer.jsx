@@ -9,7 +9,10 @@ function Footer() {
       <div className="flex flex-col items-center space-y-10">
         <div className="grid justify-items-center grid-cols-1 md:grid-cols-4 gap-10 md:gap-10 w-11/12 md:w-full text-center md:text-left">
           <div className="space-y-4">
-            <div className="w-[180px] h-[50px] bg-gray mx-auto md:mx-0"></div>
+            <div className="w-[150px] mx-auto md:mx-0">
+              {" "}
+              <img src="/assets/Frame.png" alt="" className="w-full h-full" />
+            </div>
             <p className="text-sm md:text-base lg:w-60 text-gray-700">
               24/7 ambulance booking for fast, reliable emergency and
               non-emergency transport.
