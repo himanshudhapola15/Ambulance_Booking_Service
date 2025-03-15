@@ -72,7 +72,7 @@ function Footer() {
               </a>
             </p>
             <p className="text-sm hover:underline cursor-pointer">
-              <a href="tel:+6006078745">Call: +91-6006078745</a>
+              <a href="tel:6006078745">Call: +91-6006078745</a>
             </p>
             <a
               href="mailto:prabhat.akhoon.work@gmail.com"
