@@ -1,20 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaFacebook, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Footer() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const sectionRoutes = {
+    home: "/",
+    about: "/about",
+    contact: "/contact",
+    details: "/",
+    services: "/", 
+    testimonials: "/", 
+  };
 
   const handleNavigation = (sectionId) => {
-    navigate(`/#${sectionId}`); // Navigate to home and set hash fragment
+    const targetPath = sectionRoutes[sectionId] || "/";
+
+    if (location.pathname !== targetPath) {
+      navigate(`${targetPath}#${sectionId}`);
+    }
+
     setTimeout(() => {
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
+        section.classList.add("highlight");
+
+        setTimeout(() => {
+          section.classList.remove("highlight");
+        }, 2000);
       }
     }, 100);
   };
+
   return (
     <footer className="font-roboto px-10 pb-10">
       <div className="h-[1px] bg-gray mb-10 w-full"></div>
@@ -22,7 +43,6 @@ function Footer() {
         <div className="grid justify-items-center grid-cols-1 md:grid-cols-4 gap-10 md:gap-10 w-11/12 md:w-full text-center md:text-left">
           <div className="space-y-4">
             <div className="w-[150px] mx-auto md:mx-0">
-              {" "}
               <img
                 src="/assets/Frame.png"
                 alt="Sandhu Travels Logo"
@@ -48,7 +68,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Location: starbucks
+                starbucks
               </a>
             </p>
             <p className="text-sm hover:underline cursor-pointer">
@@ -56,7 +76,7 @@ function Footer() {
             </p>
             <a
               href="mailto:prabhat.akhoon.work@gmail.com"
-              className="text-xs md:text-base hover:underline"
+              className="text-sm cursor-pointer hover:underline"
             >
               Email: prabhat.akhoon.work@gmail.com
             </a>
@@ -72,6 +92,9 @@ function Footer() {
           <div className="space-y-2 ">
             <h1 className="font-semibold text-lg">Quick Links</h1>
             {[
+              { name: "Home", id: "home" },
+              { name: "About", id: "about" },
+              { name: "Contact", id: "contact" },
               { name: "Book Ambulance", id: "details" },
               { name: "Our Services", id: "services" },
               { name: "Our Testimonial", id: "testimonials" },
@@ -98,7 +121,7 @@ function Footer() {
         </div>
 
         <div className="text-sm text-gray text-center">
-          ©2025 by Sandhu Travels. All rights reserved.
+          ©2025 by Sandhu Tour & Travels. All rights reserved.
         </div>
       </div>
     </footer>

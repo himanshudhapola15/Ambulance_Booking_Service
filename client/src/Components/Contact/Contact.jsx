@@ -183,7 +183,7 @@ function Contact() {
               rel="noopener noreferrer"
               className="hover:underline"
             >
-              Location: starbucks
+              starbucks
             </a>
           </div>
           <div className="flex gap-3 items-center">
@@ -191,7 +191,7 @@ function Contact() {
               <FaPhoneAlt className="text-white" />
             </div>
             <p className="text-xs md:text-base hover:underline">
-              <a href="tel:+6006078745">Call: +91-6006078745</a>
+              <a href="tel:+6006078745">+91-6006078745</a>
             </p>
           </div>
           <div className="flex gap-3 items-center">
