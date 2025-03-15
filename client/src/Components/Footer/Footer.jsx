@@ -51,11 +51,9 @@ function Footer() {
           <div className="space-y-2 ">
             <h1 className="font-semibold text-lg">Quick Links</h1>
             {[
-              "Home",
-              "About Us",
-              "Book Ambulance",
+              "Book ambulance",
               "Our Services",
-              "Our Testimonials",
+              "Our Testimonial"
             ].map((link) => (
               <p key={link} className="cursor-pointer hover:underline text-sm">
                 {link}

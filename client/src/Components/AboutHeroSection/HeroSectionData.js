@@ -7,18 +7,18 @@ export const heroSectionData = [
     key: "01",
     heading: "Reliability",
     icon: RiHomeHeartFill,
-    para: "Our purpose is to save lives by reducing response times, improving the accessibility of emergency medical care, and supporting healthcare professionals in delivering critical services when every second counts.",
+    para: "We are committed to being there when you need us the most. Our service is dependable, ensuring timely arrival and support during critical moments.",
   },
   {
     key: "02",
-    heading: "Reliability",
+    heading: "Safety",
     icon: BiSolidShieldPlus,
-    para: "Our purpose is to save lives by reducing response times, improving the accessibility of emergency medical care, and supporting healthcare professionals in delivering critical services when every second counts.",
+    para: "The safety and well-being of our patients is our top priority. We adhere to strict medical protocols and maintain our fleet to the highest standards to ensure secure transportation.",
   },
   {
     key: "03",
-    heading: "Reliability",
+    heading: "Efficiency",
     icon: GrLineChart,
-    para: "Our purpose is to save lives by reducing response times, improving the accessibility of emergency medical care, and supporting healthcare professionals in delivering critical services when every second counts.",
+    para: "We value prompt and smooth service. Our goal is to deliver fast, effective care, ensuring that patients receive the medical attention they need without delay.",
   },
 ];
