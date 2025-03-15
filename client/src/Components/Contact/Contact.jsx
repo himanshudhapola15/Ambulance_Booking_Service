@@ -177,21 +177,33 @@ function Contact() {
             <div className="w-10 h-10 bg-red text-xl flex justify-center items-center rounded-xl">
               <IoLocation className="text-white" />
             </div>
-            <p className="sm:text-left w-64 text-xs md:text-base">
-              1234 Maple Grove Lane, Rivertown, XY 78901
-            </p>
+            <a
+              href="https://www.google.com/maps/place/Starbucks/@30.371101,78.0000853,13z/data=!4m10!1m2!2m1!1sstarbucks!3m6!1s0x3908d76097ba5bef:0xc1897bf1f3ea479a!8m2!3d30.371101!4d78.076303!15sCglzdGFyYnVja3MiA4gBAVoLIglzdGFyYnVja3OSAQtjb2ZmZWVfc2hvcOABAA!16s%2Fg%2F11s5zhd9sf?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Location: starbucks
+            </a>
           </div>
           <div className="flex gap-3 items-center">
             <div className="w-10 h-10 bg-red text-xl flex justify-center items-center rounded-xl">
               <FaPhoneAlt className="text-white" />
             </div>
-            <p className="text-xs md:text-base">+91-90985 xxxxx</p>
+            <p className="text-xs md:text-base hover:underline">
+              <a href="tel:+6006078745">Call: +91-6006078745</a>
+            </p>
           </div>
           <div className="flex gap-3 items-center">
             <div className="w-10 h-10 bg-red text-xl flex justify-center items-center rounded-xl">
               <IoMdMail className="text-white" />
             </div>
-            <p className="text-xs md:text-base">sandhutravels@gmail.com</p>
+            <a
+              href="mailto:prabhat.akhoon.work@gmail.com"
+              className="text-xs md:text-base hover:underline"
+            >
+              prabhat.akhoon.work@gmail.com
+            </a>
           </div>
           <div className="space-y-3 mt-5">
             <p className="uppercase text-center md:text-left font-medium text-gray text-lg">

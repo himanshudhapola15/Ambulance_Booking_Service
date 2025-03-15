@@ -57,7 +57,10 @@ function Details() {
   };
 
   return (
-    <div className="font-roboto h-[450px] sm:h-[400px] md:justify-center md:h-[550px] lg:h-[768px] md:mt-0 flex flex-col text-white space-y-1 md:space-y-3 lg:space-y-10">
+    <div
+      id="details"
+      className="font-roboto h-[450px] sm:h-[400px] md:justify-center md:h-[550px] lg:h-[768px] md:mt-0 flex flex-col text-white space-y-1 md:space-y-3 lg:space-y-10"
+    >
       <section className="text-center w-full font-bold md:font-normal md:text-left mt-10 px-10 md:px-0 md:w-2/3 leading-8 md:leading-10 lg:leading-20 text-[30px] md:text-5xl lg:text-7xl">
         Instant Ambulance Service
       </section>

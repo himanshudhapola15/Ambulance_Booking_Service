@@ -1,8 +1,20 @@
 import React from "react";
 import { FaFacebook, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+
+  const handleNavigation = (sectionId) => {
+    navigate(`/#${sectionId}`); // Navigate to home and set hash fragment
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
   return (
     <footer className="font-roboto px-10 pb-10">
       <div className="h-[1px] bg-gray mb-10 w-full"></div>
@@ -31,14 +43,23 @@ function Footer() {
           <div className="space-y-3">
             <h1 className="font-semibold text-lg">Contact</h1>
             <p className="text-sm hover:underline cursor-pointer">
-              1234 Maple Grove Lane, Rivertown, XY 78901
+              <a
+                href="https://www.google.com/maps/place/Starbucks/@30.371101,78.0000853,13z/data=!4m10!1m2!2m1!1sstarbucks!3m6!1s0x3908d76097ba5bef:0xc1897bf1f3ea479a!8m2!3d30.371101!4d78.076303!15sCglzdGFyYnVja3MiA4gBAVoLIglzdGFyYnVja3OSAQtjb2ZmZWVfc2hvcOABAA!16s%2Fg%2F11s5zhd9sf?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Location: starbucks
+              </a>
             </p>
             <p className="text-sm hover:underline cursor-pointer">
-              Call: +91-90985 xxxxx
+              <a href="tel:+6006078745">Call: +91-6006078745</a>
             </p>
-            <p className="text-sm hover:underline cursor-pointer">
-              Email: sandhutravels@gmail.com
-            </p>
+            <a
+              href="mailto:prabhat.akhoon.work@gmail.com"
+              className="text-xs md:text-base hover:underline"
+            >
+              Email: prabhat.akhoon.work@gmail.com
+            </a>
 
             <div className="flex justify-center  md:justify-start gap-5 text-2xl mt-3">
               <FaFacebook className="cursor-pointer hover:text-blue-600" />
@@ -51,12 +72,16 @@ function Footer() {
           <div className="space-y-2 ">
             <h1 className="font-semibold text-lg">Quick Links</h1>
             {[
-              "Book ambulance",
-              "Our Services",
-              "Our Testimonial"
-            ].map((link) => (
-              <p key={link} className="cursor-pointer hover:underline text-sm">
-                {link}
+              { name: "Book Ambulance", id: "details" },
+              { name: "Our Services", id: "services" },
+              { name: "Our Testimonial", id: "testimonials" },
+            ].map(({ name, id }) => (
+              <p
+                key={id}
+                className="cursor-pointer hover:underline text-sm"
+                onClick={() => handleNavigation(id)}
+              >
+                {name}
               </p>
             ))}
           </div>

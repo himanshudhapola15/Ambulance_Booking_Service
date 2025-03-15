@@ -35,7 +35,10 @@ function Testimonial() {
   ));
 
   return (
-    <div className="md:mt-40 mt-20 flex flex-col mb-10 justify-center items-center md:space-y-4 lg:space-y-16 mx-2 md:mx-[20px] lg:mx-[67px]">
+    <div
+      id="testimonials"
+      className="md:mt-40 mt-20 flex flex-col mb-10 justify-center items-center md:space-y-4 lg:space-y-16 mx-2 md:mx-[20px] lg:mx-[67px]"
+    >
       <h1 className="text-4xl text-center lg:text-6xl font-roboto text-darkgray font-bold">
         Trusted by Our Community
       </h1>
@@ -47,8 +50,8 @@ function Testimonial() {
           paddingRight={isSmallScreen ? 50 : 50}
           responsive={{
             0: { items: 1 },
-            768: { items: 1.2},
-            1024: { items: 1.2},
+            768: { items: 1.2 },
+            1024: { items: 1.2 },
             1250: { items: 1.2 },
           }}
           controlsStrategy="alternate"
