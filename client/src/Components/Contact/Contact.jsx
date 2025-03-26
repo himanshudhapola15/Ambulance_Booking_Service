@@ -202,7 +202,7 @@ function Contact() {
               <IoMdMail className="text-white" />
             </div>
             <a
-              href="mailto:prabhat.akhoon.work@gmail.com"
+              href="mailto:sandhu.travels.services@gmail.com"
               className="text-xs md:text-base hover:underline"
             >
               sandhu.travels.services@gmail.com
