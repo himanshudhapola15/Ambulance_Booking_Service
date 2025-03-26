@@ -40,7 +40,7 @@ function Card({ item }) {
         } hover:bg-red hover:text-white`}
     >
       <div className="space-y-3">
-        <h1 className="text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
+        <h1 className="text-[20px] font-semibold md:text-[25px] lg:text-[28px]">
           {item.heading}
         </h1>
         <p className="text-[16px] md:text-[20px] lg:text-[16px]">{item.para}</p>

@@ -12,11 +12,11 @@ export const cardData = [
   {
     key: "03",
     heading: "Medical Expertise",
-    para: "Trusted by over 200+ doctors, our skilled team provides expert care you can rely on.",
+    para: "Trusted by a wide network of medical professionals, our skilled team provides expert care you can rely on. We prioritize your health and comfort, ensuring the highest standards of service at all times.",
   },
   {
     key: "04",
     heading: "Affordable Pricing",
-    para: "Serving over 10k+ customers, we offer transparent, affordable pricing, ensuring you get the best care at a fair cost.",
+    para: "Serving a large number of customers, we offer transparent, affordable pricing, ensuring you get the best care at a fair cost. Our commitment is to provide reliable and compassionate service every step of the way.",
   },
 ];

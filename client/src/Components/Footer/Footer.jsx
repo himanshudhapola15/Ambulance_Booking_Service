@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { FaFacebook, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
-import { AiFillInstagram } from "react-icons/ai";
+import React from "react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { useNavigate, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Footer() {
   const navigate = useNavigate();
@@ -12,8 +12,8 @@ function Footer() {
     about: "/about",
     contact: "/contact",
     details: "/",
-    services: "/", 
-    testimonials: "/", 
+    services: "/",
+    testimonials: "/",
   };
 
   const handleNavigation = (sectionId) => {
@@ -36,6 +36,21 @@ function Footer() {
     }, 100);
   };
 
+  const showToast = (message) => {
+    toast(message, {
+      duration: 5000,
+      style: {
+        background: "#33363d",
+        color: "#fff",
+        fontWeight: "bold",
+        padding: window.innerWidth < 768 ? "8px" : "12px",
+        fontSize: window.innerWidth < 768 ? "12px" : "16px",
+        borderRadius: "8px",
+        fontFamily: "Roboto, sans-serif",
+      },
+    });
+  };
+
   return (
     <footer className="font-roboto px-10 pb-10">
       <div className="h-[1px] bg-gray mb-10 w-full"></div>
@@ -54,7 +69,7 @@ function Footer() {
                 className="w-full h-full md:hidden"
               />
             </div>
-            <p className="text-sm lg:w-65  text-gray-700">
+            <p className="text-sm lg:w-65 text-gray-700">
               24/7 ambulance booking for fast, reliable emergency and
               non-emergency transport.
             </p>
@@ -64,32 +79,35 @@ function Footer() {
             <h1 className="font-semibold text-lg">Contact</h1>
             <p className="text-sm hover:underline cursor-pointer">
               <a
-                href="https://www.google.com/maps/place/Starbucks/@30.371101,78.0000853,13z/data=!4m10!1m2!2m1!1sstarbucks!3m6!1s0x3908d76097ba5bef:0xc1897bf1f3ea479a!8m2!3d30.371101!4d78.076303!15sCglzdGFyYnVja3MiA4gBAVoLIglzdGFyYnVja3OSAQtjb2ZmZWVfc2hvcOABAA!16s%2Fg%2F11s5zhd9sf?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/place/P.G.I.+Hospital/@30.7616094,76.7770877,17z/data=!3m1!4b1!4m6!3m5!1s0x390fedc82fffffff:0x8fffa3a3543256b2!8m2!3d30.7616094!4d76.7796626!16s%2Fg%2F11f53qqy7p?entry=ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:underline"
               >
-                starbucks
+                P.G.I. Hospital, Government High School, Road, Sector 35D,
+                Sector 35, Chandigarh, 160022
               </a>
             </p>
             <p className="text-sm hover:underline cursor-pointer">
-              <a href="tel:+916006078745">Call: +91-6006078745</a>
+              <a href="tel:+917347478882">Call: +91-7347478882</a>
             </p>
             <a
-              href="mailto:prabhat.akhoon.work@gmail.com"
+              href="mailto:sandhu.travels.services@gmail.com"
               className="text-sm cursor-pointer hover:underline"
             >
-              Email: prabhat.akhoon.work@gmail.com
+              Email: sandhu.travels.services@gmail.com
             </a>
-
-            <div className="flex justify-center  md:justify-start gap-5 text-2xl mt-3">
-              <FaFacebook className="cursor-pointer hover:text-blue-600" />
-              <AiFillInstagram className="cursor-pointer hover:text-pink-500" />
-              <FaXTwitter className="cursor-pointer hover:text-black" />
-              <FaWhatsapp className="cursor-pointer hover:text-green-500" />
+            <div className="flex justify-center md:justify-start gap-5 text-2xl mt-3">
+              <FaWhatsapp
+                className="text-3xl hover:text-green-500 cursor-pointer"
+                onClick={() =>
+                  window.open("https://wa.me/917347478882", "_blank")
+                }
+              />
             </div>
           </div>
 
-          <div className="space-y-2 ">
+          <div className="space-y-2">
             <h1 className="font-semibold text-lg">Quick Links</h1>
             {[
               { name: "Home", id: "home" },
@@ -109,12 +127,26 @@ function Footer() {
             ))}
           </div>
 
-          <div className="space-y-2 mr-3  0">
-            <h1 className="font-semibold text-lg ">Others</h1>
-            <p className="cursor-pointer hover:underline text-sm">
+          <div className="space-y-2 mr-3">
+            <h1 className="font-semibold text-lg">Others</h1>
+            <p
+              className="cursor-pointer hover:underline text-sm"
+              onClick={() =>
+                showToast(
+                  "We’re currently updating our Privacy Policy to provide you with the best protection. Please check back soon for the complete version."
+                )
+              }
+            >
               Privacy Policy
             </p>
-            <p className="cursor-pointer hover:underline text-sm">
+            <p
+              className="cursor-pointer hover:underline text-sm"
+              onClick={() =>
+                showToast(
+                  "Our Terms and Conditions are being finalized. Thank you for your patience, and we will have them available soon."
+                )
+              }
+            >
               Terms and Conditions
             </p>
           </div>

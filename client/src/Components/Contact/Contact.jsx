@@ -5,7 +5,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaXTwitter } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -50,7 +49,7 @@ function Contact() {
       toast.success(response.data.message || "Successful!", {
         id: loadingToast,
         style: {
-          background: "#333333",
+          background: "#33363d",
           color: "#fff",
           fontWeight: "bold",
           padding: window.innerWidth < 768 ? "8px" : "12px",
@@ -70,6 +69,7 @@ function Contact() {
           padding: window.innerWidth < 768 ? "8px" : "12px",
           fontSize: window.innerWidth < 768 ? "12px" : "16px",
           borderRadius: "8px",
+          fontFamily: "Roboto, sans-serif",
         },
       });
     }
@@ -177,21 +177,24 @@ function Contact() {
             <div className="w-10 h-10 bg-red text-xl flex justify-center items-center rounded-xl">
               <IoLocation className="text-white" />
             </div>
-            <a
-              href="https://www.google.com/maps/place/Starbucks/@30.371101,78.0000853,13z/data=!4m10!1m2!2m1!1sstarbucks!3m6!1s0x3908d76097ba5bef:0xc1897bf1f3ea479a!8m2!3d30.371101!4d78.076303!15sCglzdGFyYnVja3MiA4gBAVoLIglzdGFyYnVja3OSAQtjb2ZmZWVfc2hvcOABAA!16s%2Fg%2F11s5zhd9sf?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              starbucks
-            </a>
+            <p className="text-xs md:text-base hover:underline cursor-pointer w-[280px] md:w-[300px]">
+              <a
+                href="https://www.google.com/maps/place/P.G.I.+Hospital/@30.7616094,76.7770877,17z/data=!3m1!4b1!4m6!3m5!1s0x390fedc82fffffff:0x8fffa3a3543256b2!8m2!3d30.7616094!4d76.7796626!16s%2Fg%2F11f53qqy7p?entry=ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                P.G.I. Hospital, Government High School, Road, Sector 35D,
+                Sector 35, Chandigarh, 160022
+              </a>
+            </p>
           </div>
           <div className="flex gap-3 items-center">
             <div className="w-10 h-10 bg-red text-xl flex justify-center items-center rounded-xl">
               <FaPhoneAlt className="text-white" />
             </div>
             <p className="text-xs md:text-base hover:underline">
-              <a href="tel:+916006078745">+91-6006078745</a>
+              <a href="tel:+917347478882">+91-7347478882</a>
             </p>
           </div>
           <div className="flex gap-3 items-center">
@@ -202,7 +205,7 @@ function Contact() {
               href="mailto:prabhat.akhoon.work@gmail.com"
               className="text-xs md:text-base hover:underline"
             >
-              prabhat.akhoon.work@gmail.com
+              sandhu.travels.services@gmail.com
             </a>
           </div>
           <div className="space-y-3 mt-5">
@@ -210,10 +213,14 @@ function Contact() {
               Contact with us at
             </p>
             <div className="flex gap-4 justify-center sm:justify-start">
-              <FaFacebook className="text-3xl hover:text-blue-600 cursor-pointer" />
-              <AiFillInstagram className="text-3xl hover:text-pink-500 cursor-pointer" />
-              <FaXTwitter className="text-3xl hover:text-black cursor-pointer" />
-              <FaWhatsapp className="text-3xl hover:text-green-500 cursor-pointer" />
+              {/* <FaFacebook className="text-3xl hover:text-blue-600 cursor-pointer" />
+              <AiFillInstagram className="text-3xl hover:text-pink-500 cursor-pointer" /> */}
+              <FaWhatsapp
+                className="text-3xl hover:text-green-500 cursor-pointer"
+                onClick={() => {
+                  window.open("https://wa.me/917347478882", "_blank");
+                }}
+              />
             </div>
           </div>
         </div>

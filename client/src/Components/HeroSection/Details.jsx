@@ -20,12 +20,13 @@ function Details() {
 
     const loadingToast = toast.loading("Please wait... 🚑", {
       style: {
-        background: "#333333",
+        background: "#33363d",
         color: "#fff",
         fontWeight: "bold",
         padding: window.innerWidth < 768 ? "8px" : "12px",
         fontSize: window.innerWidth < 768 ? "12px" : "16px",
         borderRadius: "8px",
+        fontFamily: "Roboto, sans-serif",
       },
     });
 
