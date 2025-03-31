@@ -13,7 +13,7 @@ function HomePage() {
     <div id="home" className="overflow-hidden relative">
       <div className="fixed bottom-7 right-5 z-50">
         <a href="tel:+917347478882">
-          <IoCall className="md:w-16 md:h-16 w-9 h-9 text-offwhite rounded-full p-2 md:p-3 cursor-pointer bg-red shadow-lg" />
+          <IoCall className="md:w-16 md:h-16 w-12 h-12 text-offwhite rounded-full p-2 md:p-3 cursor-pointer bg-red shadow-lg" />
         </a>
       </div>
       <Navbar />
