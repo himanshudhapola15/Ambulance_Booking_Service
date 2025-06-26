@@ -16,13 +16,13 @@ A modern, responsive frontend application for booking ambulance services online.
 - **Responsive Design**: Seamlessly optimized for both mobile and desktop devices to ensure accessibility anytime, anywhere.
 
 ## HomePage
-![Image](https://github.com/user-attachments/assets/bbed65b0-95cf-4004-8f9b-2030c83c660a)
+![Image](https://github.com/user-attachments/assets/8ab7fed2-19cf-4722-a335-faf10f75abd5)
 
 ## Services
-![Image](https://github.com/user-attachments/assets/5b6398d8-eebc-40ad-b927-64e4d62bd056)
+![Image](https://github.com/user-attachments/assets/a492f743-7a6e-461c-95e0-76eb9566d70b)
 
 ## About
-![Image](https://github.com/user-attachments/assets/497d5fcf-38f9-46d4-93ad-b6d01e692e5e)
+![Image](https://github.com/user-attachments/assets/15da36be-b891-48ca-b6e2-83cd0c753405)
 
 ## Contact
-![Image](https://github.com/user-attachments/assets/b4894b99-d8ee-472a-b8cf-3f47d9c7f832)
+![Image](https://github.com/user-attachments/assets/5562c2b5-0410-4c6e-916c-52167e34f6c4)
