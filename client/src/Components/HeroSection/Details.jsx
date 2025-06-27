@@ -31,7 +31,7 @@ function Details() {
     });
 
     try {
-      await axios.post(`https://ambulance-booking-service-ndha.onrender.com/request`, data, {
+      await axios.post(`https://ambulance-booking-service-ndha.onrender.com/api/ambulance/request`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
