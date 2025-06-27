@@ -11,7 +11,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 function Contact() {
-  const token = import.meta.env.VITE_SECRET_TOKEN;
+  const token = "86691fb162ca864c6b473b7668c6ad2f7a1653b34d0c2880fffe0ae7e44329e8"
   const {
     register,
     handleSubmit,
