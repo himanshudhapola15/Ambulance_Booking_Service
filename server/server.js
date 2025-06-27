@@ -10,7 +10,10 @@ const app = express();
 
 dotenv.config();
 
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://travels-umber.vercel.app",
+];
 app.use(
   cors({
     origin: function (origin, callback) {
