@@ -35,7 +35,6 @@ app.options(
   })
 );
 
-
 app.use(express.json());
 
 const ambulanceBookingRoutes = require("./src/routes/ambulanceBookingRoutes");
@@ -63,9 +62,9 @@ app.use(
 );
 app.use("/api/contact", contactFormLimiter, authenticateToken, contactRoutes);
 
-app.use(express.static(path.join(__dirname, "..", "client", "build")));
+app.use(express.static(path.join(__dirname, "..", "client")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "client", "index.html"));
 });
 
 app.use(express.static(path.join(__dirname, "public")));
