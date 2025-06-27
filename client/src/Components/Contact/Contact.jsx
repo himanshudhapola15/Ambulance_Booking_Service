@@ -35,7 +35,7 @@ function Contact() {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/contact/submit`,
+        `https://ambulance-booking-service-rh4m.onrender.com/api/contact/submit`,
         data,
         {
           headers: {

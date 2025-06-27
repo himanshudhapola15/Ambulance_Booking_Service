@@ -32,13 +32,17 @@ function Details() {
     });
 
     try {
-      await axios.post(`http://localhost:3000/api/ambulance/request`, data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      });
+      await axios.post(
+        `https://ambulance-booking-service-rh4m.onrender.com/api/ambulance/request`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
 
       toast.dismiss(loadingToast);
       setIsSuccessModalOpen(true);
