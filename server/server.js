@@ -4,14 +4,20 @@ const path = require('path');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors')
 
-const authenticateToken = require('./utils/authenticateToken');
+const authenticateToken = require('./src/utils/authenticateToken');
 
 const app = express();
 
 dotenv.config();
+<<<<<<< HEAD:server/src/server.js
 app.use(cors({ origin: "*" , credentials: true }));
 const ambulanceBookingRoutes = require('./routes/ambulanceBookingRoutes');
 const contactRoutes = require('./routes/contactRoutes');
+=======
+app.use(cors({ origin: process.env.CORS_ORIGIN , credentials: true }));
+const ambulanceBookingRoutes = require('./src/routes/ambulanceBookingRoutes');
+const contactRoutes = require('./src/routes/contactRoutes');
+>>>>>>> 3c1940a (server.js location changed):server/server.js
 
 app.use(express.json()); 
 
