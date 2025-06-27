@@ -9,7 +9,7 @@ const authenticateToken = require('./utils/authenticateToken');
 const app = express();
 
 dotenv.config();
-app.use(cors({ origin: process.env.CORS_ORIGIN , credentials: true }));
+app.use(cors({ origin: "*" , credentials: true }));
 const ambulanceBookingRoutes = require('./routes/ambulanceBookingRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 
