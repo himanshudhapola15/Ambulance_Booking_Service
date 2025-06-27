@@ -1,8 +1,4 @@
-# Ambulance Booking Service
-
-A modern, responsive frontend application for booking ambulance services online. This project is part of a complete system aimed at providing fast and reliable emergency transport by allowing users to book ambulances in real-time.
-
-## Demo: https://travels-umber.vercel.app/
+## Link - https://travels-umber.vercel.app/
 
 ## Tech Stack
 
